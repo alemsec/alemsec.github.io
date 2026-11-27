@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050b17">
+<meta name="description" content="Siber güvenlik, açık kaynak ve Linux üzerine notlar, kaynaklar ve paylaşımlar. · Notes and resources on cybersecurity, open source and Linux.">
+<meta property="og:type" content="website"><meta property="og:title" content="alemSecurity"><meta property="og:description" content="Siber güvenlik, açık kaynak ve Linux üzerine notlar, kaynaklar ve paylaşımlar. · Notes and resources on cybersecurity, open source and Linux.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232ea8ff' d='M11.39.605C10.376%203.092%209.764%204.72%208.635%207.132c.693.734%201.543%201.589%202.923%202.554-1.484-.61-2.496-1.224-3.252-1.86C6.86%2010.842%204.596%2015.138%200%2023.395c3.612-2.085%206.412-3.37%209.021-3.862a6.61%206.61%200%2001-.171-1.547l.003-.115c.058-2.315%201.261-4.095%202.687-3.973%201.426.12%202.534%202.096%202.478%204.409a6.52%206.52%200%2001-.146%201.243c2.58.505%205.375%201.785%208.962%203.857-.706-1.299-1.335-2.46-1.936-3.572-.945-.733-1.93-1.688-3.941-2.723%201.382.359%202.371.773%203.143%201.236-6.108-11.376-6.604-12.883-8.699-17.763z'/%3E%3C/svg%3E">
+<title>alemSecurity</title>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#050b17;--bg2:#08142a;--line:#12305a;--blue:#2ea8ff;--glow:#4cc3ff;--gold:#c9a45c;--text:#d6e4f5;--mute:#7f97b5;
+  --mono:ui-monospace,"JetBrains Mono","Fira Code",Menlo,Consolas,monospace;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;
+  background-image:
+   radial-gradient(60% 40% at 80% 0%,rgba(46,168,255,.14),transparent 70%);}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);z-index:5;background:rgba(5,11,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;letter-spacing:.3px}
+.brand b{color:var(--blue)}
+.brand svg{width:24px;height:24px;transform:perspective(120px) rotateY(-16deg) rotateX(8deg);filter:drop-shadow(1px 1px 0 #0b5a96) drop-shadow(2px 2px 0 #0a3c68) drop-shadow(0 0 6px rgba(46,168,255,.7))}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.9rem;color:var(--mute)}
+nav ul a:hover{color:var(--glow)}
+
+
+.hero{padding:72px 0 56px;display:grid;gap:28px}
+.bismillah{font-size:1.5rem;color:var(--gold);font-family:"Amiri","Scheherazade New","Noto Naskh Arabic",serif;direction:rtl;text-align:left;opacity:.9}
+h1{font-size:clamp(2.4rem,8vw,4.4rem);line-height:1.05;margin:0;letter-spacing:-1px}
+h1 span{color:var(--blue);text-shadow:0 0 22px rgba(46,168,255,.55)}
+.lead{max-width:560px;color:var(--mute);font-size:1.05rem;margin:0}
+.term{border:1px solid var(--line);background:rgba(8,20,42,.85);border-radius:8px;font-family:var(--mono);font-size:.88rem;max-width:560px;box-shadow:0 0 30px rgba(46,168,255,.1)}
+.term .bar{display:flex;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line)}
+.term .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.term pre{margin:0;padding:14px 16px;white-space:pre-wrap;min-height:112px}
+.p{color:var(--blue)}.g{color:var(--gold)}
+.cur{display:inline-block;width:8px;height:15px;background:var(--glow);vertical-align:-2px;animation:b 1s steps(2) infinite}
+@keyframes b{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 20px;border-radius:6px;border:1px solid var(--blue);font-weight:600;transition:.2s}
+.btn.fill{background:var(--blue);color:#02101f}
+.btn.fill:hover{box-shadow:0 0 22px rgba(46,168,255,.6)}
+.btn.line{color:var(--glow)}
+.btn.line:hover{background:rgba(46,168,255,.12)}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{margin:0 0 6px;font-size:1.6rem;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px rgba(201,164,92,.7)}
+.sub{color:var(--mute);margin:0 0 26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{display:block;padding:20px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(160deg,var(--bg2),var(--bg));transition:.2s}
+.card:hover{border-color:var(--blue);box-shadow:0 0 24px rgba(46,168,255,.18)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .h{font-family:var(--mono);font-size:.8rem;color:var(--blue)}
+.card p{margin:10px 0 0;color:var(--mute);font-size:.93rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{font-family:var(--mono);font-size:.78rem;padding:3px 9px;border:1px solid var(--line);border-radius:4px;color:var(--mute)}
+.about{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:720px){.about{grid-template-columns:1.3fr 1fr}}
+.quote{border-left:2px solid var(--gold);padding:4px 0 4px 16px;color:var(--gold);font-style:italic}
+.quote small{display:block;color:var(--mute);font-style:normal;margin-top:4px}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--mute);font-size:.88rem;text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+#net,.spot{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.spot{background:radial-gradient(520px circle at var(--mx,70%) var(--my,20%),rgba(46,168,255,.13),transparent 60%)}
+main.wrap,footer{position:relative;z-index:1}
+.hero{position:relative;isolation:isolate}
+.card{position:relative;overflow:hidden;transform-style:preserve-3d;transition:transform .15s ease-out,border-color .2s,box-shadow .2s}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .2s;background:radial-gradient(220px circle at var(--gx,50%) var(--gy,50%),rgba(76,195,255,.2),transparent 65%)}
+.card:hover::after{opacity:1}
+.panel{border:1px solid var(--line);border-radius:10px;background:rgba(8,20,42,.8);box-shadow:0 0 40px rgba(46,168,255,.1);overflow:hidden}
+.pbar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.82rem;color:var(--mute)}
+.pbar .clock{margin-left:auto;color:var(--blue)}
+.dot{width:8px;height:8px;border-radius:50%;background:#3ddc97;box-shadow:0 0 8px #3ddc97}
+.pbody{display:grid;grid-template-columns:230px 1fr}
+.side{padding:16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.stats div{border:1px solid var(--line);border-radius:6px;padding:8px 2px}
+.stats b{display:block;font-family:var(--mono);font-size:1.25rem;color:var(--glow)}
+.stats small{color:var(--mute);font-size:.72rem}
+.cats{display:flex;flex-direction:column;gap:6px}
+.cats button{font:inherit;text-align:left;background:none;color:var(--mute);border:1px solid transparent;border-radius:6px;padding:8px 10px;cursor:pointer;font-family:var(--mono);font-size:.86rem;transition:.15s}
+.cats button:hover{color:var(--text);border-color:var(--line)}
+.cats button[aria-pressed=true]{color:var(--glow);border-color:var(--blue);background:rgba(46,168,255,.1)}
+.gate{cursor:pointer;font:inherit;font-weight:600;margin-top:auto}
+.pmain{padding:16px;min-width:0}
+#q{width:100%;padding:11px 14px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-family:var(--mono);font-size:.9rem;margin-bottom:14px}
+#q:focus{outline:none;border-color:var(--blue);box-shadow:0 0 14px rgba(46,168,255,.3)}
+.rg{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.res a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);transition:.15s}
+.res a:hover{border-color:var(--blue);box-shadow:0 0 16px rgba(46,168,255,.2)}
+.res b{display:block;font-size:.95rem}
+.res small{color:var(--mute);font-size:.82rem}
+.none{color:var(--mute);font-family:var(--mono);font-size:.88rem;padding:8px 0}
+@media(max-width:720px){.pbody{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line)}.cats{flex-direction:row;flex-wrap:wrap}.gate{margin-top:0}}
+.ov{position:fixed;inset:0;z-index:20;background:rgba(5,11,23,.93);display:grid;place-content:center;gap:16px;padding:20px;justify-items:center}
+.ov[hidden],.ov [hidden]{display:none}
+.ov .term{width:min(520px,90vw)}
+.ov .row{display:flex;gap:12px}
+.brand{margin-right:auto}
+#lang{margin-left:14px;font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--glow);background:none;border:1px solid var(--line);border-radius:5px;padding:5px 10px;cursor:pointer}
+#lang:hover{border-color:var(--blue)}
+.at{font-family:var(--mono);font-size:.8rem;font-weight:400;color:var(--gold)}.grp{margin-bottom:30px}.grp:last-child{margin-bottom:0}.grp h3{margin:0 0 4px;font-size:1.1rem;display:flex;align-items:baseline;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}.grp h3 i{font-style:normal;font-family:var(--mono);font-size:.75rem;color:var(--blue)}.grp>p{margin:8px 0 12px;color:var(--mute);font-size:.88rem}
+.res b,.res small{overflow-wrap:anywhere}
+.grid .card{border-color:rgba(127,151,181,.2);background:linear-gradient(160deg,#0c1522,#070d16)}
+.grid .card:hover{border-color:rgba(127,151,181,.5);box-shadow:0 0 20px rgba(201,164,92,.08)}
+.grid .card::after{background:radial-gradient(220px circle at var(--gx,50%) var(--gy,50%),rgba(127,151,181,.14),transparent 65%)}
+.grid .card .h{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:.82rem}
+.tgi{width:18px;height:18px;flex:none;fill:#5f8fb8;transition:fill .2s}.card:hover .tgi{fill:#8ec5ee}
+.ayah{font-family:"Amiri","Scheherazade New","Noto Naskh Arabic",serif;font-size:1.45rem;line-height:2.1;color:var(--gold);font-style:normal;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.ayt{font-style:normal;color:var(--text);font-size:.92rem;margin-top:8px}
+html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}
+button,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn .tgi{width:16px;height:16px;fill:currentColor}
+.grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+.rg{grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr))}
+.res b{display:flex;align-items:center;gap:7px}.res .tgi{width:14px;height:14px}.res a:hover .tgi{fill:#8ec5ee}
+.arch{position:absolute;right:0;top:8px;width:min(240px,44vw);aspect-ratio:1;z-index:-1;pointer-events:none;will-change:transform}
+.arch svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(3px 5px 0 #0a3c68) drop-shadow(0 0 20px rgba(46,168,255,.55));animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-12px)}}
+@media(max-width:720px){
+.wrap{padding:0 16px}.hero{padding:36px 0}section{padding:36px 0}h2{font-size:1.4rem;flex-wrap:wrap}
+.arch{width:38vw;top:0;opacity:.4}
+.side{padding:14px}.pmain{padding:14px}.pbar{flex-wrap:wrap}
+.cats{flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:0 -14px;padding:0 14px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cats::-webkit-scrollbar{display:none}
+.cats button{flex:none;white-space:nowrap;min-height:44px}
+#q{font-size:16px;min-height:44px}
+.rg{grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr));gap:8px}
+.res a{padding:10px 11px}.res b{font-size:.88rem}
+.btn{padding:12px 18px;min-height:46px}.cta .btn{flex:1 1 auto}
+.ayah{font-size:1.3rem}.ov .row{flex-wrap:wrap;justify-content:center}}
+@media(max-width:560px){
+nav{height:auto;flex-wrap:wrap;padding:8px 0 2px}
+nav ul{display:flex;order:3;width:100%;gap:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav ul a{display:block;padding:8px 10px}
+#lang{margin-left:8px;min-height:38px}}
+@media(hover:none){.card:hover::after{opacity:0}}
+.res a:hover,.res a{-webkit-tap-highlight-color:transparent}
+
+/* ── v3: yatay taşma, sticky, tilt (tek kaynak: CSS değişkenleri), mobil ── */
+html{overflow-x:clip;scroll-padding-top:76px}body{overflow-x:clip}
+.card{transform:perspective(700px) translateY(var(--ty,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+#lang{min-width:48px;text-align:center}.btn{white-space:normal;text-align:center}
+nav ul a[aria-current]{color:var(--glow)}
+.side,.pmain{min-width:0}.ov{overflow:auto;overscroll-behavior:contain}.ov .btn{min-height:46px}
+@media(max-width:720px){.pbody{grid-template-columns:minmax(0,1fr)}.stats small{font-size:.68rem}}
+@media(max-width:560px){html{scroll-padding-top:104px}nav ul{scrollbar-width:none}}
+
+/* ── v4: arka plan (masonik desen kaldırıldı → aurora) + altın tonlar ── */
+body{background-image:radial-gradient(60% 40% at 80% 0%,rgba(46,168,255,.14),transparent 70%),radial-gradient(50% 35% at 0% 100%,rgba(201,164,92,.09),transparent 70%)}
+body::before{content:"";position:fixed;inset:-15%;z-index:0;pointer-events:none;will-change:transform;background:radial-gradient(38% 32% at 18% 22%,rgba(46,168,255,.13),transparent 70%),radial-gradient(34% 30% at 82% 68%,rgba(201,164,92,.11),transparent 70%),radial-gradient(28% 24% at 62% 12%,rgba(201,164,92,.07),transparent 70%);animation:drift 40s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(4%,-3%,0) scale(1.08)}}
+::selection{background:rgba(201,164,92,.3);color:#fff}
+header{border-bottom-color:rgba(201,164,92,.3)}
+section,footer{border-top:1px solid transparent;border-image:linear-gradient(90deg,rgba(201,164,92,.55),rgba(18,48,90,.9) 40%,transparent) 1}
+nav ul a:hover,nav ul a[aria-current]{color:var(--gold)}
+.stats b,.grp h3 i{color:var(--gold)}.grp h3{border-bottom-color:rgba(201,164,92,.3)}
+.panel{border-color:rgba(201,164,92,.28);box-shadow:0 0 40px rgba(201,164,92,.07),0 0 60px rgba(46,168,255,.06)}
+.pbar{border-bottom-color:rgba(201,164,92,.22)}.term{border-color:rgba(201,164,92,.25)}
+.res a:hover{border-color:rgba(201,164,92,.6);box-shadow:0 0 16px rgba(201,164,92,.14)}
+.cats button[aria-pressed=true],.chips button[aria-pressed=true]{color:var(--gold);border-color:rgba(201,164,92,.6);background:rgba(201,164,92,.08)}
+.tags span{border-color:rgba(201,164,92,.3);color:var(--gold)}
+.btn.line{border-color:rgba(201,164,92,.55);color:var(--gold)}.btn.line:hover{background:rgba(201,164,92,.1)}
+#q:focus{border-color:var(--gold);box-shadow:0 0 14px rgba(201,164,92,.25)}
+
+/* ── v6: ortalanmış başlıklar, okunaklı gövde, marka renkli sosyal butonlar ── */
+.hero{text-align:center;justify-items:center}
+.hero .arch{position:relative;right:auto;top:auto;width:min(132px,34vw);z-index:auto;opacity:1}
+.hero .arch svg{filter:drop-shadow(2px 3px 0 #0a3c68) drop-shadow(0 0 16px rgba(46,168,255,.55))}
+.bismillah{text-align:center}.lead{margin-inline:auto}.term{width:100%;margin-inline:auto;text-align:left}.hero .cta{justify-content:center}
+/* bölüm başlıkları ortada; uzun metin ve paneller okunaklı kalsın diye solda */
+section>h2{justify-content:center;text-align:center}
+section>.sub{text-align:center;max-width:560px;margin-inline:auto}
+.about{max-width:820px;margin-inline:auto}
+.grid .card{text-align:left}
+#iletisim{text-align:center}
+.soc{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.fsoc{margin-bottom:18px}
+.soc a{--c:#fff;--g:rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:12px;padding:11px 20px 11px 16px;min-height:54px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.035);text-align:left;line-height:1.2;transition:border-color .2s,box-shadow .2s,transform .2s,background .2s}
+.soc a:hover{border-color:var(--c);background:rgba(255,255,255,.06);box-shadow:0 0 20px var(--g);transform:translateY(-2px)}
+.soc a b{display:block;font-size:.98rem;font-weight:700;color:var(--text)}
+.soc a small{display:block;margin-top:2px;font-size:.76rem;color:var(--mute);font-weight:400}
+.si{width:24px;height:24px;flex:none;fill:var(--c);color:var(--c)}
+.b-tg{--c:#26A5E4;--g:rgba(38,165,228,.4)}
+.b-li{--c:#0A66C2;--g:rgba(10,102,194,.55)}
+.b-sg{--c:#3A76F0;--g:rgba(58,118,240,.5)}
+.b-gh,.b-xx{--c:#F0F6FC;--g:rgba(240,246,252,.22)}
+.b-ig{--c:#E1306C;--g:rgba(225,48,108,.5)}
+.fsoc a{min-height:50px}
+footer .copy{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+@media(max-width:560px){.soc a{flex:1 1 100%;justify-content:flex-start}.fsoc a{flex:1 1 auto;justify-content:center}}
+
+/* terminaldeki parlayan iletişim bağlantısı */
+.term pre{min-height:150px}
+.tlink{color:var(--gold);font-weight:700;text-shadow:0 0 6px rgba(201,164,92,.75),0 0 18px rgba(201,164,92,.45);border-bottom:1px dashed rgba(201,164,92,.6);transition:text-shadow .2s,color .2s,border-color .2s}
+.tlink:hover,.tlink:focus-visible{color:#ffe2a0;border-bottom-style:solid;text-shadow:0 0 8px rgba(255,226,160,.95),0 0 26px rgba(201,164,92,.8)}
+
+/* ── v9: sade terminal penceresi (Kali tarzı istem) ── */
+.tx{border:1px solid transparent;border-radius:6px;background:linear-gradient(#060e1b,#040912) padding-box,linear-gradient(135deg,rgba(201,164,92,.55),rgba(46,168,255,.4) 55%,rgba(18,48,90,.7)) border-box;box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 36px rgba(46,168,255,.1);overflow:hidden}
+.tx .bar{align-items:center;gap:0;padding:8px 12px;border-bottom:1px solid rgba(46,168,255,.16);background:linear-gradient(180deg,rgba(46,168,255,.08),rgba(46,168,255,.02))}
+.tx .tic{width:58px;color:var(--blue);font-size:.78rem;font-weight:700}
+.tx .ttl{flex:1;text-align:center;font-size:.78rem;color:var(--mute)}
+.tx .twc{width:58px;display:flex;justify-content:flex-end;gap:12px;color:var(--mute);font-size:.72rem;opacity:.75}
+.tx .twc b{font-weight:400}
+.tx pre{padding:16px 18px 14px;line-height:1.75;min-height:290px;font-size:.82rem}
+.tx .kf{color:#3f8fd8}.tx .ku{color:var(--glow);font-weight:700}.tx .kp{color:var(--gold);font-weight:700}.tx .kd{color:#3f8fd8;font-weight:700}
+.tx .lk{font-weight:700;transition:text-shadow .2s}.tx .lk:hover,.tx .lk:focus-visible{text-decoration:underline;text-underline-offset:3px;text-shadow:0 0 10px currentColor}
+#hakkimda>.sub{font-size:1.15rem;color:var(--text);margin-bottom:30px}
+
+/* ── v10: giriş düzeni — dar ekranda tek sütun (sıra order ile), geniş ekranda iki sütun ── */
+.hero-l,.hero-r{display:contents}
+.hero .arch{order:1}.hero .bismillah{order:2}.hero h1{order:3}.hero .lead{order:4}.hero .term{order:5}.hero .cta{order:6}
+@media(min-width:960px){
+.hero{grid-template-columns:1.05fr .95fr;column-gap:52px;align-items:center;justify-items:stretch;text-align:left;padding:44px 0 52px}
+.hero-l{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.hero-r{display:flex;flex-direction:column;align-items:center;gap:22px}
+.hero .bismillah{text-align:left}
+.hero h1{font-size:clamp(2.6rem,4.6vw,3.9rem)}
+.hero .lead{margin-inline:0}
+.hero .cta{justify-content:flex-start}
+.hero .arch{width:min(190px,18vw)}
+.hero .term{margin-inline:0;width:100%}
+}
+
+/* ── v11: giriş ekranı tam sayfa; aşağısı kaydırınca görünür ── */
+:root{--hh:57px}
+@media(max-width:560px){:root{--hh:104px}}
+.hero{min-height:calc(100svh - var(--hh));align-content:center;padding-bottom:76px}
+.hero .down{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:40px;height:40px;display:grid;place-items:center;border:1px solid rgba(201,164,92,.4);border-radius:50%;color:var(--gold);transition:border-color .2s,box-shadow .2s,color .2s}
+.hero .down:hover,.hero .down:focus-visible{border-color:var(--gold);box-shadow:0 0 16px rgba(201,164,92,.35);color:#ffe2a0}
+@media(min-width:960px){.hero{grid-template-columns:1fr 1.1fr;padding:44px 0 76px}}
+
+/* ── v12: dil düğmesi, yakında, birleşik gateway, kanıt, yazılar, e-posta, mobil giriş ── */
+#lang{color:var(--gold);border-color:rgba(201,164,92,.5);animation:lp 4s ease-in-out infinite}
+#lang:hover{background:rgba(201,164,92,.1)}
+@keyframes lp{0%,100%{box-shadow:0 0 0 rgba(201,164,92,0);border-color:rgba(201,164,92,.4)}50%{box-shadow:0 0 14px rgba(201,164,92,.4);border-color:rgba(201,164,92,.9)}}
+nav ul a.soon{opacity:.5;cursor:default;pointer-events:none}
+#hakkimda .bismillah{margin-bottom:12px}
+.tgrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin-top:26px;color:var(--mute);font-family:var(--mono);font-size:.85rem}
+.tgrow a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;min-height:44px;border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:var(--sans);transition:.2s}
+.tgrow a:hover{border-color:rgba(201,164,92,.6);box-shadow:0 0 16px rgba(201,164,92,.14)}
+.proof{max-width:820px;margin:36px auto 0}
+.proof>h3{margin:0 0 4px;font-size:1.2rem;text-align:center}
+.pg{margin-top:18px}.pg h4{margin:0 0 10px;font:400 .85rem var(--mono);color:var(--gold)}
+.card .dt,#plist .card .h{color:var(--mute)}
+.mailbox{margin-top:26px;display:grid;gap:14px;justify-items:center;font-size:.95rem}
+.mailbox small{display:block;color:var(--mute);font:.74rem var(--mono)}
+.mailbox a{color:var(--gold);border-bottom:1px dashed rgba(201,164,92,.6)}
+.mailbox code{font:.8rem var(--mono);word-break:break-all;user-select:all}
+.b-md{--c:#F0F6FC;--g:rgba(240,246,252,.22)}
+@media(max-width:959px){.hero .cta{order:5}.hero .term{order:6}}
+@media(max-width:720px){.hero{min-height:0;padding:20px 0 40px;gap:18px}.hero .arch{width:56px}.hero .down{display:none}.tx pre{min-height:210px;font-size:.78rem}}
+@media(prefers-reduced-motion:reduce){#lang{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="tg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#F58529"/><stop offset=".55" stop-color="#DD2A7B"/><stop offset=".8" stop-color="#8134AF"/><stop offset="1" stop-color="#515BD4"/></linearGradient></defs><symbol id="xx" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol><symbol id="ig" viewBox="0 0 24 24"><rect x="2.4" y="2.4" width="19.2" height="19.2" rx="5.6" fill="none" stroke="url(#igg)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="url(#igg)" stroke-width="2.2"/><circle cx="17.5" cy="6.5" r="1.4" fill="url(#igg)" stroke="none"/></symbol><symbol id="gh" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol><symbol id="li" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol><symbol id="sg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="1.7 2.3"/><path d="M12 4.7a7.3 7.3 0 0 0-6.2 11.1l-1.1 3.6 3.7-1A7.3 7.3 0 1 0 12 4.7z"/></symbol><symbol id="md" viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></symbol></svg>
+<canvas id="net" aria-hidden="true"></canvas><div class="spot" aria-hidden="true"></div>
+<header><div class="wrap"><nav>
+  <a class="brand" href="#top" aria-label="alemSecurity ana sayfa">
+    <svg viewBox="0 0 24 24" fill="#2ea8ff" aria-hidden="true"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.375 1.785 8.962 3.857-.706-1.299-1.335-2.46-1.936-3.572-.945-.733-1.93-1.688-3.941-2.723 1.382.359 2.371.773 3.143 1.236-6.108-11.376-6.604-12.883-8.699-17.763z"/></svg>
+    <span>alem<b>Security</b></span></a>
+  <ul>
+    <!-- Sayfa hazır olunca: aşağıdaki script'te SOON listesinden anahtarı sil (vision, roadmap). -->
+    <li><a href="#hakkimda" data-i18n="nav.about">Hakkımda</a></li><li><a data-nav="vision" href="vizyon.html" data-i18n="nav.vision">Vizyon</a></li><li><a href="blog.html" data-i18n="nav.blog">Blog</a></li><li><a data-nav="roadmap" href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li><li><a href="gateway.html" data-i18n="nav.gateway">Gateway</a></li><li><a href="#iletisim" data-i18n="nav.contact">İletişim</a></li></ul><button id="lang" type="button" aria-label="Language">EN</button>
+</nav></div></header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div class="hero-l">
+      <h1>alem<span>Security</span></h1>
+      <p class="lead"><span data-i18n="notes-resources-and-posts">Siber güvenlik, Linux ve açık kaynak üzerine öğrendiklerimi not alıp burada biriktiriyorum.</span></p>
+      <div class="cta">
+      <a class="btn fill" href="blog.html"><span data-i18n="read-the-blog">Yazıları oku</span></a>
+      <a class="btn line" href="#iletisim"><span data-i18n="hero.contact">Bana ulaş</span></a>
+    </div>
+    </div>
+    <a class="down" href="#hakkimda" data-i18n-aria="scroll" aria-label="Aşağı kaydır"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a>
+    <div class="hero-r">
+      <div class="arch" id="star" aria-hidden="true"><svg viewBox="0 0 24 24"><defs><linearGradient id="agr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fe0ff"/><stop offset="1" stop-color="#1a7fd4"/></linearGradient></defs><path fill="url(#agr)" d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.375 1.785 8.962 3.857-.706-1.299-1.335-2.46-1.936-3.572-.945-.733-1.93-1.688-3.941-2.723 1.382.359 2.371.773 3.143 1.236-6.108-11.376-6.604-12.883-8.699-17.763z"/></svg></div>
+      <div class="term tx">
+        <div class="bar"><span class="tic" aria-hidden="true">❯_</span><span class="ttl">alem㉿arch: ~</span><span class="twc" aria-hidden="true"><b>—</b><b>▢</b><b>✕</b></span></div>
+        <pre id="t" aria-live="off"></pre>
+      </div>
+    </div>
+  </div>
+
+  <section id="hakkimda">
+    <div class="bismillah" lang="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <h2 data-i18n="about.h">Kısaca ben</h2>
+    <p class="sub"><span data-i18n="someone-who-wonders-digs">Bir şeyin nasıl çalıştığını öğrenmeden rahat edemem.</span></p>
+    <div class="about">
+      <div>
+        <p><span data-i18n="i-turn-what-i">Siber güvenlikte öğrendiğim her şeyi önce kendime not alıyorum, sonra Telegram’da yazıya ve kaynak listesine çeviriyorum. Arch Linux kullanıyorum; sistemi kendi ellerimle kurmak, nasıl çalıştığını anlamanın en dürüst yolu.</span></p>
+        <p><span data-i18n="beyond-technical-knowledge-im">Teknik işlerin dışında tarihe ve kültüre de düşkünüm. Kütüphane kanalımda yazılımdan İslam tarihine uzanan bir arşiv var.</span></p>
+      </div>
+      <div class="quote"><span data-i18n="when-one-door-closes">Bir kapı kapanırsa, bir kapı açılır; mühim olan aramaktır.</span><small><span data-i18n="knowledge-grows-when-shared">Bilgi, paylaştıkça çoğalır.</span></small>
+        <div class="ayah" lang="ar" dir="rtl">وَٱلَّذِينَ جَٰهَدُوا۟ فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا ۚ وَإِنَّ ٱللَّهَ لَمَعَ ٱلْمُحْسِنِينَ</div>
+        <div class="ayt"><span data-i18n="as-for-those-who">Bizim uğrumuzda mücahede edenlere gelince, elbette biz onlara yollarımızı gösteririz ve şüphesiz ki Allah, her halde muhsinlerle beraberdir.</span></div><small><span data-i18n="alankabut-69">Ankebût, 69 · Elmalılı M. Hamdi Yazır meali</span></small></div>
+    </div>
+  <div id="proof" class="proof" hidden></div>
+  </section>
+
+
+  <section id="yazilar" hidden>
+    <h2 data-i18n="posts.h">Son yazılar</h2>
+    <div class="grid" id="plist" style="margin-top:22px"></div>
+    <div class="cta" style="justify-content:center;margin-top:22px"><a class="btn line" href="blog.html"><span data-i18n="posts.all">Tüm yazılar</span></a></div>
+  </section>
+
+  <section id="panel">
+    <h2>Gateway <span class="at">faydalikaynak</span></h2>
+    <p class="sub"><span data-i18n="gw.teaser">Malware, CTI, blog ve Telegram kanalları; konu konu ayrılmış, aranabilir bir kaynak arşivi.</span></p>
+    <div class="grid">
+      <a class="card" href="gateway.html?k=malware"><div class="h">malware</div><h3><span data-i18n="gw.mal.t">Zararlı yazılım analizi</span></h3><p><span data-i18n="gw.mal.d">Sandbox’lar, örnek arşivleri ve tersine mühendislik araçları.</span></p></a>
+      <a class="card" href="gateway.html?k=cti"><div class="h">CTI</div><h3><span data-i18n="gw.cti.t">Siber tehdit istihbaratı</span></h3><p><span data-i18n="gw.cti.d">Tarama motorları, DNS ve sertifika araçları, OSINT siteleri.</span></p></a>
+      <a class="card" href="gateway.html?k=blog"><div class="h">blog</div><h3><span data-i18n="gw.blog.t">Blog ve arşivler</span></h3><p><span data-i18n="gw.blog.d">Araştırmacıların yazıları, vaka raporları ve eski klasikler.</span></p></a>
+    </div>
+    <div class="cta" style="justify-content:center;margin-top:22px"><a class="btn fill" href="gateway.html"><span data-i18n="gw.open">Arşivi aç</span></a></div>
+    <div class="tgrow"><span data-i18n="gw.tgrow">Telegram’da</span>
+      <a href="https://t.me/alemsec" target="_blank" rel="noopener"><svg class="tgi" aria-hidden="true"><use href="#tg"/></svg>alem Security</a>
+      <a href="https://t.me/faydalikaynak" target="_blank" rel="noopener"><svg class="tgi" aria-hidden="true"><use href="#tg"/></svg>faydalikaynak</a>
+      <a href="https://t.me/+pktnOi5D6uIzYzZk" target="_blank" rel="noopener"><svg class="tgi" aria-hidden="true"><use href="#tg"/></svg><span data-i18n="library">Kütüphane</span></a>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <h2 data-i18n="contact">Bana ulaş</h2>
+    <p class="sub" data-i18n="get-in-touch">Soru, öneri ya da iş birliği için bu kanalların hepsinden yazabilirsin.</p>
+    <div class="soc">
+      <a class="b-tg" href="https://t.me/Muhterizim" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#tg"/></svg><span><b>Telegram</b><small>âlem🌙 #AFK</small></span></a>
+      <a class="b-li" href="https://www.linkedin.com/in/kaptan-%C4%B1-derya-3305a728b" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#li"/></svg><span><b>LinkedIn</b><small data-i18n="soc.li">Profesyonel profilim</small></span></a>
+      <a class="b-md" href="https://medium.com/@Alemsec" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#md"/></svg><span><b>Medium</b><small data-i18n="soc.md">Uzun yazılarım</small></span></a>
+      <a class="b-sg" href="https://signal.me/#eu/qmLaUszmiZDl92x0Z0GUwWTdyHJuGOgJR5Gw7Id3sZVxQmohqcNED6Wkvpp5M9fL" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#sg"/></svg><span><b>Signal</b><small data-i18n="soc.sg">Uçtan uca şifreli</small></span></a>
+      <a class="b-xx" href="https://x.com/alems3c" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#xx"/></svg><span><b>X</b></span></a>
+      <a class="b-ig" href="https://www.instagram.com/alem.cve" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#ig"/></svg><span><b>Instagram</b></span></a>
+    </div>
+    <div id="mailbox" class="mailbox" hidden></div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="soc fsoc"><a class="b-gh" href="https://github.com/alemsec" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#gh"/></svg><span><b>GitHub</b><small data-i18n="soc.gh">Kodlarım ve açık kaynak işlerim</small></span></a></div>
+  <div class="copy"><span>© <span id="y">2026</span> alemSecurity</span></div>
+</div></footer>
+
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var cv=document.getElementById('net'),cx=cv.getContext('2d'),star=document.getElementById('star'),spot=document.querySelector('.spot');
+  var W,H,D=Math.min(devicePixelRatio||1,2),P=[],m={x:-999,y:-999},t={x:innerWidth*.7,y:innerHeight*.25},c={x:t.x,y:t.y},ang=0;
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;cx.setTransform(D,0,0,D,0,0);
+    var n=Math.min(90,Math.round(W*H/17000));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,g:i%3===0});}
+  var lw=innerWidth;size();addEventListener('resize',function(){if(innerWidth!==lw){lw=innerWidth;size();}});
+  addEventListener('pointermove',function(e){m.x=t.x=e.clientX;m.y=t.y=e.clientY;});
+  document.addEventListener('pointerleave',function(){m.x=m.y=-999;});
+  function loop(){
+    c.x+=(t.x-c.x)*.08;c.y+=(t.y-c.y)*.08;
+    spot.style.setProperty('--mx',c.x+'px');spot.style.setProperty('--my',c.y+'px');
+    ang+=.12;var dx=(c.x/W-.5),dy=(c.y/H-.5);
+    star.style.transform='perspective(900px) translate('+(-dx*24)+'px,'+(-dy*18)+'px) rotateX('+(-dy*16)+'deg) rotateY('+(Math.sin(ang*.05)*12+dx*26)+'deg)';
+    cx.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      var mdx=p.x-m.x,mdy=p.y-m.y,md=Math.sqrt(mdx*mdx+mdy*mdy);
+      if(md<140&&md>1){p.x+=mdx/md*.5;p.y+=mdy/md*.5;}
+      cx.fillStyle=p.g?'rgba(201,164,92,.75)':'rgba(76,195,255,.6)';cx.beginPath();cx.arc(p.x,p.y,1.3,0,6.283);cx.fill();
+      for(var j=i+1;j<P.length;j++){var q=P[j],ax=p.x-q.x,ay=p.y-q.y,d=ax*ax+ay*ay;
+        if(d<11000){cx.strokeStyle='rgba(46,168,255,'+(.2*(1-d/11000))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke();}}
+      if(md<170){cx.strokeStyle='rgba(76,195,255,'+(.5*(1-md/170))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(m.x,m.y);cx.stroke();}
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches)document.querySelectorAll('.card').forEach(function(k){
+    k.addEventListener('pointermove',function(e){var r=k.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height,S=k.style;
+      S.setProperty('--gx',x*100+'%');S.setProperty('--gy',y*100+'%');S.setProperty('--rx',(.5-y)*10+'deg');S.setProperty('--ry',(x-.5)*12+'deg');S.setProperty('--ty','-2px');});
+    k.addEventListener('pointerleave',function(){var S=k.style;S.removeProperty('--rx');S.removeProperty('--ry');S.removeProperty('--ty');});
+  });
+})();
+</script>
+<script>
+(function(){
+"use strict";
+/* ══ ÇEVİRİLER (data-i18n anahtarları) — yeni metin: HTML'e data-i18n="anahtar" ekle, buraya TR/EN yaz ══ */
+const I18N={
+ "tr": {
+  "about": "Selam, ben alem",
+  "contact": "Konuşalım",
+  "read-the-blog": "Yazıları oku",
+  "browse-resources": "Kaynaklara göz at",
+  "notes-resources-and-posts": "Siber güvenlik, Linux ve açık kaynak: öğrendikçe not alıyor, işe yarayanı burada paylaşıyorum.",
+  "someone-who-wonders-digs": "Bir şeyin nasıl çalıştığını öğrenmeden rahat edemem.",
+  "i-turn-what-i": "Siber güvenlikte öğrendiğim her şeyi önce kendime not alıyorum, sonra Telegram’da yazıya ve kaynak listesine çeviriyorum. Arch Linux kullanıyorum; sistemi kendi ellerimle kurmak, nasıl çalıştığını anlamanın en dürüst yolu.",
+  "beyond-technical-knowledge-im": "Teknik işlerin dışında tarihe ve kültüre de düşkünüm. Kütüphane kanalımda yazılımdan İslam tarihine uzanan bir arşiv var.",
+  "cybersecurity": "siber güvenlik",
+  "software": "yazılım",
+  "history": "tarih",
+  "islamic-history": "islam tarihi",
+  "when-one-door-closes": "Bir kapı kapanırsa, bir kapı açılır; mühim olan aramaktır.",
+  "knowledge-grows-when-shared": "Bilgi, paylaştıkça çoğalır.",
+  "faydalikaynak-resource-gateway-malware": "Beğendiğim ve işime yarayan bağlantılar; malware, CTI, blog ve Telegram kanalları konu konu ayrıldı.",
+  "resources": "kaynak",
+  "categories": "kategori",
+  "shown": "görünen",
+  "open-gateway": "Kanala geç",
+  "open-channel": "Kanalı aç",
+  "close": "Kapat",
+  "channels-and-resources": "Telegram’da beni bul",
+  "all-on-telegram-all": "Üç kanal; üçü de açık ve ücretsiz.",
+  "telegram-blog": "Yazılar ve notlar",
+  "my-personal-blog-posts": "Öğrendikçe yazdığım uzun notlar.",
+  "cybersecurity-resources": "Bağlantı arşivi",
+  "cybersecurity-resources-tools-and": "Araçlar, rehberler ve siteler; hepsi tek yerde.",
+  "library": "Kütüphane",
+  "broad-resource-archive": "Okumayı sevenlere",
+  "cybersecurity-software-islamic-history": "Siber güvenlikten İslam tarihine uzanan, her gün biraz daha büyüyen bir arşiv.",
+  "get-in-touch": "Soru, öneri ya da iş birliği: hangisi sana yakınsa oradan yaz.",
+  "soc.li": "Profesyonel profilim",
+  "soc.sg": "Uçtan uca şifreli",
+  "soc.gh": "Kodlarım ve açık kaynak işlerim",
+  "foot": "Arch Linux üzerinde",
+  "alankabut-69": "Ankebût, 69 · Elmalılı M. Hamdi Yazır meali",
+  "as-for-those-who": "Bizim uğrumuzda mücahede edenlere gelince, elbette biz onlara yollarımızı gösteririz ve şüphesiz ki Allah, her halde muhsinlerle beraberdir.",
+  "gw.teaser": "Malware, CTI, blog ve Telegram kanalları; konu konu ayrılmış, aranabilir bir kaynak arşivi. Favorilerimi yıldızla işaretledim.",
+  "gw.open": "Arşivi aç",
+  "gw.tg": "Telegram kanalı",
+  "scroll": "Aşağı kaydır",
+  "hero.contact": "Bana ulaş",
+  "about.h": "Kısaca ben",
+  "soon": "Yakında",
+  "gw.mal.t": "Zararlı yazılım analizi",
+  "gw.mal.d": "Sandbox’lar, örnek arşivleri ve tersine mühendislik araçları.",
+  "gw.cti.t": "Siber tehdit istihbaratı",
+  "gw.cti.d": "Tarama motorları, DNS ve sertifika araçları, OSINT siteleri.",
+  "gw.blog.t": "Blog ve arşivler",
+  "gw.blog.d": "Araştırmacıların yazıları, vaka raporları ve eski klasikler.",
+  "gw.tgrow": "Telegram’da",
+  "posts.h": "Son yazılar",
+  "posts.all": "Tüm yazılar",
+  "proof.h": "Yaptıklarım",
+  "proof.p": "Projeler",
+  "proof.w": "Write-up’lar",
+  "proof.c": "CTF ve HTB",
+  "proof.s": "Sertifikalar",
+  "mail.e": "E-posta",
+  "mail.p": "PGP parmak izi",
+  "mail.k": "Anahtarı indir",
+  "soc.md": "Uzun yazılarım",
+  "nav.about": "Hakkımda",
+  "nav.vision": "Vizyon",
+  "nav.blog": "Blog",
+  "nav.roadmap": "Roadmap",
+  "nav.gateway": "Gateway",
+  "nav.channels": "Kanallar",
+  "nav.contact": "İletişim",
+  "gw.search": "Ara: ad, URL veya açıklama (nmap, owasp, linux…)",
+  "gw.cats": "Kategoriler",
+  "gw.none": "Sonuç yok. Başka bir kelime dene ya da kanalda ara.",
+  "ov.1": "bağlantı kuruluyor...",
+  "ov.2": "kanal çözülüyor: t.me/faydalikaynak",
+  "ov.3": "geçit hazır.",
+  "term.who": "alemSecurity — öğrenir, not alır, paylaşırım",
+  "term.res": "kaynaklar",
+  "term.lib": "kutuphane",
+  "term.free": "hepsi-ucretsiz",
+  "term.contact": "iletisim --bana-yaz"
+ },
+ "en": {
+  "about": "Hi, I’m alem",
+  "contact": "Let’s talk",
+  "read-the-blog": "Read the posts",
+  "browse-resources": "Browse the resources",
+  "notes-resources-and-posts": "Cybersecurity, Linux and open source: I take notes as I learn and share what turns out useful.",
+  "someone-who-wonders-digs": "I can’t rest until I know how something works.",
+  "i-turn-what-i": "Whatever I learn in security goes into my own notes first, then into posts and resource lists on Telegram. I run Arch Linux; building the system by hand is the most honest way I know to understand it.",
+  "beyond-technical-knowledge-im": "Outside the technical work, I’m drawn to history and culture. My library channel holds an archive that runs from software to Islamic history.",
+  "cybersecurity": "cybersecurity",
+  "software": "software",
+  "history": "history",
+  "islamic-history": "islamic history",
+  "when-one-door-closes": "When one door closes, another opens; what matters is to keep searching.",
+  "knowledge-grows-when-shared": "Knowledge grows when shared.",
+  "faydalikaynak-resource-gateway-malware": "Links I like and actually use, sorted by topic: malware, CTI, blogs and Telegram channels.",
+  "resources": "resources",
+  "categories": "categories",
+  "shown": "shown",
+  "open-gateway": "Go to the channel",
+  "open-channel": "Open channel",
+  "close": "Close",
+  "channels-and-resources": "Find me on Telegram",
+  "all-on-telegram-all": "Three channels, all open and free.",
+  "telegram-blog": "Posts and notes",
+  "my-personal-blog-posts": "Longer notes I write as I learn.",
+  "cybersecurity-resources": "Link archive",
+  "cybersecurity-resources-tools-and": "Tools, guides and sites, all in one place.",
+  "library": "Library",
+  "broad-resource-archive": "For people who love to read",
+  "cybersecurity-software-islamic-history": "An archive that grows a little every day, from cybersecurity to Islamic history.",
+  "get-in-touch": "Questions, ideas or collaboration: write wherever suits you.",
+  "soc.li": "My professional profile",
+  "soc.sg": "End-to-end encrypted",
+  "soc.gh": "My code and open-source work",
+  "foot": "Running on Arch Linux",
+  "alankabut-69": "Al-Ankabut, 69",
+  "as-for-those-who": "As for those who strive in Our cause, We will surely show them Our ways, and indeed Allah is with those who do good.",
+  "gw.teaser": "A searchable archive of malware, CTI, blog and Telegram links, sorted by topic. My favorites carry a star.",
+  "gw.open": "Open the archive",
+  "gw.tg": "Telegram channel",
+  "scroll": "Scroll down",
+  "hero.contact": "Get in touch",
+  "about.h": "About me",
+  "soon": "Soon",
+  "gw.mal.t": "Malware analysis",
+  "gw.mal.d": "Sandboxes, sample archives and reverse-engineering tools.",
+  "gw.cti.t": "Cyber threat intelligence",
+  "gw.cti.d": "Scan engines, DNS and certificate tools, OSINT sites.",
+  "gw.blog.t": "Blogs and archives",
+  "gw.blog.d": "Researcher write-ups, case reports and old classics.",
+  "gw.tgrow": "On Telegram",
+  "posts.h": "Latest posts",
+  "posts.all": "All posts",
+  "proof.h": "What I’ve done",
+  "proof.p": "Projects",
+  "proof.w": "Write-ups",
+  "proof.c": "CTF and HTB",
+  "proof.s": "Certificates",
+  "mail.e": "Email",
+  "mail.p": "PGP fingerprint",
+  "mail.k": "Download key",
+  "soc.md": "Long reads",
+  "nav.about": "About",
+  "nav.vision": "Vision",
+  "nav.blog": "Blog",
+  "nav.roadmap": "Roadmap",
+  "nav.gateway": "Gateway",
+  "nav.channels": "Channels",
+  "nav.contact": "Contact",
+  "gw.search": "Search name, URL or description (nmap, owasp, linux…)",
+  "gw.cats": "Categories",
+  "gw.none": "No results. Try another word or search the channel.",
+  "ov.1": "connecting...",
+  "ov.2": "resolving channel: t.me/faydalikaynak",
+  "ov.3": "gateway ready.",
+  "term.who": "alemSecurity — I learn, take notes, share",
+  "term.res": "resources",
+  "term.lib": "library",
+  "term.free": "all-free",
+  "term.contact": "contact --write-me"
+ }
+};
+
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+let L;try{L=localStorage.getItem("lg")}catch(e){}
+L=L||(/^tr/i.test(navigator.language)?"tr":"en");
+const T=k=>(I18N[L]&&I18N[L][k])||I18N.tr[k]||k;
+
+/* hero terminali */
+const term=$("#t"),reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const P1='<span class="kf">┌──(</span><span class="ku">alem㉿arch</span><span class="kf">)-[</span><span class="kp">~</span><span class="kf">]</span>\n';
+const P2='<span class="kf">└─</span><span class="kd">$</span> ';
+const PR=P1+P2;
+const LK=[["blog","blog.html","#e0b45a"],["gateway","gateway.html","#e0b45a"],["github","https://github.com/alemsec","#F0F6FC"]];
+const lkHTML=()=>LK.map(([n,u,c])=>'<a class="lk" style="color:'+c+'" href="'+u+'"'+(/^http/.test(u)?' target="_blank" rel="noopener"':'')+'>'+n+'</a>').join("  ");
+const SCRIPT=()=>[
+  {cmd:"whoami",out:esc(T("term.who"))},
+  {cmd:"ls ~/links",out:lkHTML()},
+  {cmd:T("term.contact"),link:"#iletisim"}
+];
+const st={i:0,n:0,done:false};
+function drawTerm(){
+  let h="";
+  SCRIPT().forEach((it,k)=>{
+    if(!st.done&&k>st.i)return;
+    const typing=!st.done&&k===st.i,c=typing?it.cmd.slice(0,st.n):it.cmd;
+    const ready=!typing||st.n>=it.cmd.length;
+    h+=PR+(it.link&&ready?'<a class="tlink" href="'+it.link+'">'+esc(c)+'</a>':esc(c))+(typing?'<span class="cur"></span>':'')+"\n";
+    if(!typing&&it.out)h+=it.out+"\n";
+  });
+  if(st.done)h+=PR+'<span class="cur"></span>';
+  term.innerHTML=h;
+}
+function stepTerm(){
+  const S=SCRIPT(),it=S[st.i];
+  if(st.n<it.cmd.length){st.n++;drawTerm();setTimeout(stepTerm,60+Math.random()*55);return}
+  drawTerm();
+  setTimeout(()=>{
+    if(st.i<S.length-1){st.i++;st.n=0;drawTerm();setTimeout(stepTerm,320)}
+    else{st.done=true;drawTerm()}
+  },it.out?450:250);
+}
+
+/* ── Menüde “Yakında”: sayfa hazır olunca anahtarı bu listeden sil ── */
+const SOON=[];
+/* ── Doldurunca görünür, boşsa hiç görünmez ──
+   PROOF.p projeler · .w write-up · .c CTF/HTB · .s sertifikalar
+   öğe: {t:"Başlık", u:"https://…", d:{tr:"kısa not", en:"short note"}}  (u ve d isteğe bağlı) */
+const PROOF={p:[],w:[],c:[],s:[]};
+const CONTACT={email:"",pgp:"",pgpUrl:""};
+const pick=v=>v&&typeof v==="object"?(v[L]||v.tr||""):(v||"");
+const okU=u=>(/^(https?:\/\/|mailto:)/i.test(u)||/^[\w.\/%-]+(\?[\w=&%.-]*)?$/.test(u))?u:"";
+let POSTS=[];
+function navSoon(){$$("nav a[data-nav]").forEach(a=>{
+  if(SOON.includes(a.dataset.nav)){
+    if(a.hasAttribute("href")){a.dataset.href=a.getAttribute("href");a.removeAttribute("href")}
+    a.classList.add("soon");a.setAttribute("aria-disabled","true");a.dataset.soon=T("soon");
+  }else{
+    if(!a.hasAttribute("href")&&a.dataset.href)a.setAttribute("href",a.dataset.href);
+    a.classList.remove("soon");a.removeAttribute("aria-disabled");a.removeAttribute("data-soon");
+  }});}
+function renderExtras(){
+  let h="";
+  [["p","proof.p"],["w","proof.w"],["c","proof.c"],["s","proof.s"]].forEach(([k,tk])=>{
+    const a=PROOF[k]||[];if(!a.length)return;
+    h+='<div class="pg"><h4>'+esc(T(tk))+'</h4><div class="grid">'+a.map(x=>{
+      const u=okU(x.u||""),d=pick(x.d);
+      return (u?'<a class="card" href="'+esc(u)+'" target="_blank" rel="noopener">':'<div class="card">')+'<h3>'+esc(x.t)+'</h3>'+(d?'<p>'+esc(d)+'</p>':'')+(u?'</a>':'</div>');
+    }).join("")+'</div></div>';});
+  const pr=$("#proof");pr.hidden=!h;pr.innerHTML=h?'<h3>'+esc(T("proof.h"))+'</h3>'+h:"";
+  const ps=$("#yazilar");ps.hidden=!POSTS.length;
+  $("#plist").innerHTML=POSTS.map(p=>{
+    const u=okU(p.url||p.link||""),t=pick(p.title||p.baslik),d=pick(p.summary||p.ozet),dt=String(p.date||p.tarih||"");
+    return (u?'<a class="card" href="'+esc(u)+'"'+(/^http/i.test(u)?' target="_blank" rel="noopener"':'')+'>':'<div class="card">')+(dt?'<div class="h">'+esc(dt)+'</div>':'')+'<h3>'+esc(t)+'</h3>'+(d?'<p>'+esc(d)+'</p>':'')+(u?'</a>':'</div>');
+  }).join("");
+  let m="";
+  if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(CONTACT.email))m+='<div><small>'+esc(T("mail.e"))+'</small><a href="mailto:'+esc(CONTACT.email)+'">'+esc(CONTACT.email)+'</a></div>';
+  if(CONTACT.pgp){const ku=okU(CONTACT.pgpUrl||"");m+='<div><small>'+esc(T("mail.p"))+'</small><code>'+esc(CONTACT.pgp)+'</code>'+(ku?' <a href="'+esc(ku)+'" target="_blank" rel="noopener">'+esc(T("mail.k"))+'</a>':'')+'</div>';}
+  const mb=$("#mailbox");mb.hidden=!m;mb.innerHTML=m;
+}
+if(typeof fetch==="function")fetch("posts/index.json",{cache:"no-store"}).then(r=>r.ok?r.json():[]).then(j=>{
+  const a=Array.isArray(j)?j:((j&&j.posts)||[]);
+  POSTS=a.filter(x=>x&&pick(x.title||x.baslik)).sort((x,y)=>String(y.date||y.tarih||"").localeCompare(String(x.date||x.tarih||""))).slice(0,3);
+  renderExtras();}).catch(()=>{});
+
+/* dil */
+function applyLang(){
+  document.documentElement.lang=L;
+  $$("[data-i18n]").forEach(e=>{e.textContent=T(e.dataset.i18n)});
+  $$("[data-i18n-aria]").forEach(e=>e.setAttribute("aria-label",T(e.dataset.i18nAria)));
+  $("#lang").textContent=L==="en"?"TR":"EN";
+  drawTerm();navSoon();renderExtras();
+}
+$("#lang").onclick=()=>{L=L==="en"?"tr":"en";try{localStorage.setItem("lg",L)}catch(e){}applyLang()};
+try{$("#y").textContent=new Date().getFullYear()}catch(e){}
+applyLang();
+if(reduce){st.done=true;drawTerm()}else setTimeout(stepTerm,600);
+})();
+</script>
+</body>
+</html>

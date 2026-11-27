@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050b17">
+<meta name="description" content="Siber güvenlik kaynak arşivi: malware, CTI, blog, gizlilik ve Telegram kanalları. · A curated cybersecurity link archive: malware, CTI, blogs, privacy and Telegram channels.">
+<meta property="og:type" content="website"><meta property="og:title" content="Gateway · alemSecurity"><meta property="og:description" content="Siber güvenlik kaynak arşivi: malware, CTI, blog, gizlilik ve Telegram kanalları.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232ea8ff' d='M11.39.605C10.376%203.092%209.764%204.72%208.635%207.132c.693.734%201.543%201.589%202.923%202.554-1.484-.61-2.496-1.224-3.252-1.86C6.86%2010.842%204.596%2015.138%200%2023.395c3.612-2.085%206.412-3.37%209.021-3.862a6.61%206.61%200%2001-.171-1.547l.003-.115c.058-2.315%201.261-4.095%202.687-3.973%201.426.12%202.534%202.096%202.478%204.409a6.52%206.52%200%2001-.146%201.243c2.58.505%205.375%201.785%208.962%203.857-.706-1.299-1.335-2.46-1.936-3.572-.945-.733-1.93-1.688-3.941-2.723%201.382.359%202.371.773%203.143%201.236-6.108-11.376-6.604-12.883-8.699-17.763z'/%3E%3C/svg%3E">
+<title>Gateway · alemSecurity</title>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#050b17;--bg2:#08142a;--line:#12305a;--blue:#2ea8ff;--glow:#4cc3ff;--gold:#c9a45c;--text:#d6e4f5;--mute:#7f97b5;
+  --mono:ui-monospace,"JetBrains Mono","Fira Code",Menlo,Consolas,monospace;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;
+  background-image:
+   radial-gradient(60% 40% at 80% 0%,rgba(46,168,255,.14),transparent 70%);}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);z-index:5;background:rgba(5,11,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;letter-spacing:.3px}
+.brand b{color:var(--blue)}
+.brand svg{width:24px;height:24px;transform:perspective(120px) rotateY(-16deg) rotateX(8deg);filter:drop-shadow(1px 1px 0 #0b5a96) drop-shadow(2px 2px 0 #0a3c68) drop-shadow(0 0 6px rgba(46,168,255,.7))}
+nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;font-size:.9rem;color:var(--mute)}
+nav ul a:hover{color:var(--glow)}
+
+
+h1{font-size:clamp(2.4rem,8vw,4.4rem);line-height:1.05;margin:0;letter-spacing:-1px}
+h1 span{color:var(--blue);text-shadow:0 0 22px rgba(46,168,255,.55)}
+.lead{max-width:560px;color:var(--mute);font-size:1.05rem;margin:0}
+.term{border:1px solid var(--line);background:rgba(8,20,42,.85);border-radius:8px;font-family:var(--mono);font-size:.88rem;max-width:560px;box-shadow:0 0 30px rgba(46,168,255,.1)}
+.term .bar{display:flex;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line)}
+.term .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.term pre{margin:0;padding:14px 16px;white-space:pre-wrap;min-height:112px}
+.p{color:var(--blue)}.g{color:var(--gold)}
+.cur{display:inline-block;width:8px;height:15px;background:var(--glow);vertical-align:-2px;animation:b 1s steps(2) infinite}
+@keyframes b{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{padding:11px 20px;border-radius:6px;border:1px solid var(--blue);font-weight:600;transition:.2s}
+.btn.fill{background:var(--blue);color:#02101f}
+.btn.fill:hover{box-shadow:0 0 22px rgba(46,168,255,.6)}
+.btn.line{color:var(--glow)}
+.btn.line:hover{background:rgba(46,168,255,.12)}
+
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{margin:0 0 6px;font-size:1.6rem;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px rgba(201,164,92,.7)}
+.sub{color:var(--mute);margin:0 0 26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{display:block;padding:20px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(160deg,var(--bg2),var(--bg));transition:.2s}
+.card:hover{border-color:var(--blue);box-shadow:0 0 24px rgba(46,168,255,.18)}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card .h{font-family:var(--mono);font-size:.8rem;color:var(--blue)}
+.card p{margin:10px 0 0;color:var(--mute);font-size:.93rem}
+@media(min-width:720px){.about{grid-template-columns:1.3fr 1fr}}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--mute);font-size:.88rem;text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+#net,.spot{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.spot{background:radial-gradient(520px circle at var(--mx,70%) var(--my,20%),rgba(46,168,255,.13),transparent 60%)}
+main.wrap,footer{position:relative;z-index:1}
+.card{position:relative;overflow:hidden;transform-style:preserve-3d;transition:transform .15s ease-out,border-color .2s,box-shadow .2s}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .2s;background:radial-gradient(220px circle at var(--gx,50%) var(--gy,50%),rgba(76,195,255,.2),transparent 65%)}
+.card:hover::after{opacity:1}
+.panel{border:1px solid var(--line);border-radius:10px;background:rgba(8,20,42,.8);box-shadow:0 0 40px rgba(46,168,255,.1);overflow:visible}
+.pbar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.82rem;color:var(--mute)}
+.pbar .clock{margin-left:auto;color:var(--blue)}
+.dot{width:8px;height:8px;border-radius:50%;background:#3ddc97;box-shadow:0 0 8px #3ddc97}
+.pbody{display:grid;grid-template-columns:230px 1fr}
+.side{padding:16px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.stats div{border:1px solid var(--line);border-radius:6px;padding:8px 2px}
+.stats b{display:block;font-family:var(--mono);font-size:1.25rem;color:var(--glow)}
+.stats small{color:var(--mute);font-size:.72rem}
+.cats{display:flex;flex-direction:column;gap:6px}
+.cats button{font:inherit;text-align:left;background:none;color:var(--mute);border:1px solid transparent;border-radius:6px;padding:8px 10px;cursor:pointer;font-family:var(--mono);font-size:.86rem;transition:.15s}
+.cats button:hover{color:var(--text);border-color:var(--line)}
+.cats button[aria-pressed=true]{color:var(--glow);border-color:var(--blue);background:rgba(46,168,255,.1)}
+.gate{cursor:pointer;font:inherit;font-weight:600;margin-top:auto}
+.pmain{padding:16px;min-width:0}
+#q{width:100%;padding:11px 14px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--text);font-family:var(--mono);font-size:.9rem;margin-bottom:14px}
+#q:focus{outline:none;border-color:var(--blue);box-shadow:0 0 14px rgba(46,168,255,.3)}
+.rg{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.res a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);transition:.15s}
+.res a:hover{border-color:var(--blue);box-shadow:0 0 16px rgba(46,168,255,.2)}
+.res b{display:block;font-size:.95rem}
+.res small{color:var(--mute);font-size:.82rem}
+.none{color:var(--mute);font-family:var(--mono);font-size:.88rem;padding:8px 0}
+@media(max-width:720px){.pbody{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line)}.cats{flex-direction:row;flex-wrap:wrap}.gate{margin-top:0}}
+.ov{position:fixed;inset:0;z-index:20;background:rgba(5,11,23,.93);display:grid;place-content:center;gap:16px;padding:20px;justify-items:center}
+.ov[hidden],.ov [hidden]{display:none}
+.ov .term{width:min(520px,90vw)}
+.ov .row{display:flex;gap:12px}
+.brand{margin-right:auto}
+#lang{margin-left:14px;font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--glow);background:none;border:1px solid var(--line);border-radius:5px;padding:5px 10px;cursor:pointer}
+#lang:hover{border-color:var(--blue)}
+.at{font-family:var(--mono);font-size:.8rem;font-weight:400;color:var(--gold)}.grp{margin-bottom:30px}.grp:last-child{margin-bottom:0}.grp h3{margin:0 0 4px;font-size:1.1rem;display:flex;align-items:baseline;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}.grp h3 i{font-style:normal;font-family:var(--mono);font-size:.75rem;color:var(--blue)}.grp>p{margin:8px 0 12px;color:var(--mute);font-size:.88rem}
+.res b,.res small{overflow-wrap:anywhere}
+.grid .card{border-color:rgba(127,151,181,.2);background:linear-gradient(160deg,#0c1522,#070d16)}
+.grid .card:hover{border-color:rgba(127,151,181,.5);box-shadow:0 0 20px rgba(201,164,92,.08)}
+.grid .card::after{background:radial-gradient(220px circle at var(--gx,50%) var(--gy,50%),rgba(127,151,181,.14),transparent 65%)}
+.grid .card .h{display:flex;align-items:center;gap:8px;color:var(--gold);font-size:.82rem}
+.tgi{width:18px;height:18px;flex:none;fill:#5f8fb8;transition:fill .2s}.card:hover .tgi{fill:#8ec5ee}
+.ayah{font-family:"Amiri","Scheherazade New","Noto Naskh Arabic",serif;font-size:1.45rem;line-height:2.1;color:var(--gold);font-style:normal;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.ayt{font-style:normal;color:var(--text);font-size:.92rem;margin-top:8px}
+html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}
+button,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn .tgi{width:16px;height:16px;fill:currentColor}
+.grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+.rg{grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr))}
+.res b{display:flex;align-items:center;gap:7px}.res .tgi{width:14px;height:14px}.res a:hover .tgi{fill:#8ec5ee}
+@keyframes fl{50%{transform:translateY(-12px)}}
+@media(max-width:720px){
+.wrap{padding:0 16px}.hero{padding:36px 0}section{padding:36px 0}h2{font-size:1.4rem;flex-wrap:wrap}
+.side{padding:14px}.pmain{padding:14px}.pbar{flex-wrap:wrap}
+.cats{flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:0 -14px;padding:0 14px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cats::-webkit-scrollbar{display:none}
+.cats button{flex:none;white-space:nowrap;min-height:44px}
+#q{font-size:16px;min-height:44px}
+.rg{grid-template-columns:repeat(auto-fill,minmax(min(140px,100%),1fr));gap:8px}
+.res a{padding:10px 11px}.res b{font-size:.88rem}
+.btn{padding:12px 18px;min-height:46px}.cta .btn{flex:1 1 auto}
+.ayah{font-size:1.3rem}.ov .row{flex-wrap:wrap;justify-content:center}}
+@media(max-width:560px){
+nav{height:auto;flex-wrap:wrap;padding:8px 0 2px}
+nav ul{display:flex;order:3;width:100%;gap:4px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav ul a{display:block;padding:8px 10px}
+#lang{margin-left:8px;min-height:38px}}
+@media(hover:none){.card:hover::after{opacity:0}}
+.res a:hover,.res a{-webkit-tap-highlight-color:transparent}
+
+/* ── v3: yatay taşma, sticky, tilt (tek kaynak: CSS değişkenleri), mobil ── */
+html{overflow-x:clip;scroll-padding-top:76px}body{overflow-x:clip}
+.card{transform:perspective(700px) translateY(var(--ty,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+#lang{min-width:48px;text-align:center}.btn{white-space:normal;text-align:center}
+nav ul a[aria-current]{color:var(--glow)}
+.side,.pmain{min-width:0}.ov{overflow:auto;overscroll-behavior:contain}.ov .btn{min-height:46px}
+@media(max-width:720px){.pbody{grid-template-columns:minmax(0,1fr)}.stats small{font-size:.68rem}}
+@media(max-width:560px){html{scroll-padding-top:104px}nav ul{scrollbar-width:none}}
+
+/* ── v4: arka plan (masonik desen kaldırıldı → aurora) + altın tonlar ── */
+body{background-image:radial-gradient(60% 40% at 80% 0%,rgba(46,168,255,.14),transparent 70%),radial-gradient(50% 35% at 0% 100%,rgba(201,164,92,.09),transparent 70%)}
+body::before{content:"";position:fixed;inset:-15%;z-index:0;pointer-events:none;will-change:transform;background:radial-gradient(38% 32% at 18% 22%,rgba(46,168,255,.13),transparent 70%),radial-gradient(34% 30% at 82% 68%,rgba(201,164,92,.11),transparent 70%),radial-gradient(28% 24% at 62% 12%,rgba(201,164,92,.07),transparent 70%);animation:drift 40s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(4%,-3%,0) scale(1.08)}}
+::selection{background:rgba(201,164,92,.3);color:#fff}
+header{border-bottom-color:rgba(201,164,92,.3)}
+section,footer{border-top:1px solid transparent;border-image:linear-gradient(90deg,rgba(201,164,92,.55),rgba(18,48,90,.9) 40%,transparent) 1}
+nav ul a:hover,nav ul a[aria-current]{color:var(--gold)}
+.stats b,.grp h3 i{color:var(--gold)}.grp h3{border-bottom-color:rgba(201,164,92,.3)}
+.panel{border-color:rgba(201,164,92,.28);box-shadow:0 0 40px rgba(201,164,92,.07),0 0 60px rgba(46,168,255,.06)}
+.pbar{border-bottom-color:rgba(201,164,92,.22)}.term{border-color:rgba(201,164,92,.25)}
+.res a:hover{border-color:rgba(201,164,92,.6);box-shadow:0 0 16px rgba(201,164,92,.14)}
+.cats button[aria-pressed=true],.chips button[aria-pressed=true]{color:var(--gold);border-color:rgba(201,164,92,.6);background:rgba(201,164,92,.08)}
+.btn.line{border-color:rgba(201,164,92,.55);color:var(--gold)}.btn.line:hover{background:rgba(201,164,92,.1)}
+#q:focus{border-color:var(--gold);box-shadow:0 0 14px rgba(201,164,92,.25)}
+
+/* ── v6: ortalanmış başlıklar, okunaklı gövde, marka renkli sosyal butonlar ── */
+.bismillah{text-align:center}.lead{margin-inline:auto}.term{width:100%;margin-inline:auto;text-align:left}.hero .cta{justify-content:center}
+/* bölüm başlıkları ortada; uzun metin ve paneller okunaklı kalsın diye solda */
+section>h2{justify-content:center;text-align:center}
+section>.sub{text-align:center;max-width:560px;margin-inline:auto}
+.grid .card{text-align:left}
+#iletisim{text-align:center}
+.soc{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.fsoc{margin-bottom:18px}
+.soc a{--c:#fff;--g:rgba(255,255,255,.18);display:inline-flex;align-items:center;gap:12px;padding:11px 20px 11px 16px;min-height:54px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.035);text-align:left;line-height:1.2;transition:border-color .2s,box-shadow .2s,transform .2s,background .2s}
+.soc a:hover{border-color:var(--c);background:rgba(255,255,255,.06);box-shadow:0 0 20px var(--g);transform:translateY(-2px)}
+.soc a b{display:block;font-size:.98rem;font-weight:700;color:var(--text)}
+.soc a small{display:block;margin-top:2px;font-size:.76rem;color:var(--mute);font-weight:400}
+.si{width:24px;height:24px;flex:none;fill:var(--c);color:var(--c)}
+.b-tg{--c:#26A5E4;--g:rgba(38,165,228,.4)}
+.b-li{--c:#0A66C2;--g:rgba(10,102,194,.55)}
+.b-sg{--c:#3A76F0;--g:rgba(58,118,240,.5)}
+.b-gh,.b-xx{--c:#F0F6FC;--g:rgba(240,246,252,.22)}
+.b-ig{--c:#E1306C;--g:rgba(225,48,108,.5)}
+.fsoc a{min-height:50px}
+footer .copy{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+@media(max-width:560px){.soc a{flex:1 1 100%;justify-content:flex-start}.fsoc a{flex:1 1 auto;justify-content:center}}
+
+/* terminaldeki parlayan iletişim bağlantısı */
+.term pre{min-height:150px}
+.tlink{color:var(--gold);font-weight:700;text-shadow:0 0 6px rgba(201,164,92,.75),0 0 18px rgba(201,164,92,.45);border-bottom:1px dashed rgba(201,164,92,.6);transition:text-shadow .2s,color .2s,border-color .2s}
+.tlink:hover,.tlink:focus-visible{color:#ffe2a0;border-bottom-style:solid;text-shadow:0 0 8px rgba(255,226,160,.95),0 0 26px rgba(201,164,92,.8)}
+
+/* ── v7: favori yıldızı + gateway sayfası ── */
+.fs{font-style:normal;color:#ffd24a;text-shadow:0 0 7px rgba(255,210,74,.65)}
+.res b .fs{margin-left:1px;font-size:.74rem;line-height:1;transform:translateY(-1px)}
+.res a.fav{border-color:rgba(201,164,92,.4);background:linear-gradient(160deg,rgba(201,164,92,.08),var(--bg))}
+.legend{margin:0 0 12px;font-family:var(--mono);font-size:.8rem;color:var(--mute)}
+.gwpage section{border-top:0;padding-top:44px}
+
+/* ── v13: kategori önce yapı, ünlem açıklaması, renk etiketleri ── */
+.legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lg{font-family:var(--mono);font-size:.78rem;color:var(--mute);background:none;border:1px solid var(--line);border-radius:999px;padding:5px 11px;min-height:36px;cursor:pointer;transition:.15s}
+.lg i{font-style:normal;color:var(--c);text-shadow:0 0 7px var(--c)}
+.lg:hover,.lg[aria-pressed=true]{color:var(--text);border-color:var(--c);box-shadow:0 0 12px color-mix(in srgb,var(--c) 35%,transparent)}
+.cg{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr))}
+.cc{display:block;padding:16px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(160deg,var(--bg2),var(--bg));transition:.2s}
+.cc:hover{border-color:rgba(201,164,92,.6);box-shadow:0 0 18px rgba(201,164,92,.14)}
+.cc h3{margin:0;font-size:1rem}.cc .n{font:.76rem var(--mono);color:var(--gold)}.cc p{margin:8px 0 0;color:var(--mute);font-size:.86rem}
+.ct{margin:0 0 4px;font-size:1.15rem}.ct i,.grp h4 i{color:var(--gold);font-style:normal;font-size:.8rem}
+.cd{margin:0 0 6px;color:var(--mute);font-size:.9rem}.grp h4{margin:16px 0 8px;font:700 .86rem var(--mono);color:var(--gold)}
+.cnt{font:.8rem var(--mono);color:var(--mute);margin:0 0 10px}
+.it{position:relative;display:flex;align-items:flex-start;border:1px solid var(--line);border-left:3px solid var(--c,var(--line));border-radius:6px;background:var(--bg);transition:box-shadow .15s}
+.it:hover{box-shadow:0 0 14px color-mix(in srgb,var(--c,#c9a45c) 28%,transparent)}
+.res .it>a{flex:1;min-width:0;display:block;padding:10px 11px;border:0;border-radius:0;background:none;box-shadow:none}
+.it small{display:block;margin-top:2px}
+.mk{font-style:normal;color:var(--c);text-shadow:0 0 7px var(--c);font-size:.74rem;margin-left:2px}
+.it .ib{flex:none;width:28px;height:28px;margin:9px 8px 0 0;border-radius:50%;border:1px solid rgba(201,164,92,.5);background:none;color:var(--gold);font:700 .78rem var(--mono);cursor:pointer;opacity:0;transition:opacity .15s}
+.it:hover .ib,.it:focus-within .ib,.it.open .ib{opacity:1}
+.tip{display:none;position:absolute;right:6px;top:100%;z-index:6;margin-top:4px;max-width:min(260px,80vw);padding:7px 10px;background:#0a1730;border:1px solid rgba(201,164,92,.55);border-radius:6px;font-size:.8rem;color:var(--text);box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.it:hover .tip,.it.open .tip,.ib:focus-visible+.tip{display:block}
+@media(hover:none){.it .ib{opacity:1;width:36px;height:36px;margin:5px 6px 0 0}}
+#lang{margin-left:14px;font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--glow);background:none;border:1px solid var(--line);border-radius:5px;padding:5px 10px;cursor:pointer}
+#lang:hover{border-color:var(--blue)}
+#lang{margin-left:8px;min-height:38px}}
+#lang{min-width:48px;text-align:center}.btn{white-space:normal;text-align:center}
+#lang{color:var(--gold);border-color:rgba(201,164,92,.5);animation:lp 4s ease-in-out infinite}
+#lang:hover{background:rgba(201,164,92,.1)}
+@keyframes lp{0%,100%{box-shadow:0 0 0 rgba(201,164,92,0);border-color:rgba(201,164,92,.4)}50%{box-shadow:0 0 14px rgba(201,164,92,.4);border-color:rgba(201,164,92,.9)}}
+nav ul a.soon{opacity:.5;cursor:default;pointer-events:none}
+@media(prefers-reduced-motion:reduce){#lang{animation:none}}
+    a.classList.add("soon");a.setAttribute("aria-disabled","true");a.dataset.soon=T("soon");
+    a.classList.remove("soon");a.removeAttribute("aria-disabled");a.removeAttribute("data-soon");
+/* ── v14: ünlem açıklaması kırpılmasın, düzenleme modu ── */
+.pbar{border-radius:10px 10px 0 0}.pbody{border-radius:0 0 10px 10px}.side{border-radius:0 0 0 10px}
+.tip.up{top:auto;bottom:100%;margin:0 0 4px}
+.it .ib{opacity:.4}
+.eb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px;padding:9px 12px;border:1px dashed rgba(255,77,109,.6);border-radius:8px;font:.8rem var(--mono);color:var(--mute)}
+.eb[hidden]{display:none}.eb b{color:#ff4d6d}.eb .lg{--c:#ff4d6d}
+.add{display:block;width:100%;margin:10px 0 0;padding:12px;border:1px dashed rgba(201,164,92,.6);border-radius:6px;background:none;color:var(--gold);font:.82rem var(--mono);cursor:pointer;transition:background .15s}
+.add:hover,.add:focus-visible{background:rgba(201,164,92,.08)}
+.it.miss{border-style:dashed}.it.miss .ib{border:1px dashed #ff4d6d;color:#ff4d6d;opacity:1}
+
+/* ── v15: sade renk etiketleri (SVG simge + ince şerit), düzgün mobil düzen ── */
+.panel{overflow:visible}
+.legend{display:flex;flex-wrap:nowrap;gap:6px;align-items:center;margin:0 0 12px;padding:2px 0;overflow-x:auto;scrollbar-width:none}
+.legend::-webkit-scrollbar{display:none}
+.lg{flex:none;display:inline-flex;align-items:center;gap:7px;font:500 .76rem var(--mono);color:var(--mute);background:rgba(8,20,42,.6);border:1px solid var(--line);border-radius:6px;padding:0 11px;min-height:34px;white-space:nowrap;cursor:pointer;box-shadow:none;transition:color .15s,border-color .15s,background .15s}
+.lg i{display:inline-flex;font-style:normal;color:var(--c);text-shadow:none}
+.lg svg,.mk svg{width:12px;height:12px;fill:currentColor;display:block}
+.lg:hover{color:var(--text);border-color:color-mix(in srgb,var(--c,#7f97b5) 55%,transparent);box-shadow:none}
+.lg[aria-pressed=true]{color:var(--text);border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent)}
+.it{border:1px solid var(--line);border-left:1px solid var(--line);box-shadow:inset 2px 0 0 var(--c,transparent);background:rgba(8,20,42,.55);border-radius:6px;transition:background .15s,border-color .15s}
+.it:hover{border-color:rgba(127,151,181,.45);background:color-mix(in srgb,var(--c,#7f97b5) 8%,rgba(8,20,42,.55));box-shadow:inset 2px 0 0 var(--c,transparent)}
+.res .it>a b{font-weight:600}
+.mk{display:inline-flex;color:var(--c);text-shadow:none;margin-left:3px;font-size:0;line-height:0}
+.tip{background:#0b1830;border:1px solid rgba(127,151,181,.38);box-shadow:0 10px 28px rgba(0,0,0,.55)}
+@media(hover:none){.it:hover .tip{display:none}.it.open .tip{display:block}}
+@media(max-width:720px){
+.pbody{display:flex;flex-direction:column}
+.side{display:contents}
+.stats,.pbar .clock{display:none}
+.cats{order:1;margin:0;padding:12px 14px 10px;border-bottom:1px solid var(--line)}
+.cats button{min-height:40px;border-color:var(--line);border-radius:8px}
+.pmain{order:2;padding:14px}
+.gate{order:3;margin:0 14px 14px;width:calc(100% - 28px)}
+.rg{grid-template-columns:minmax(0,1fr);gap:8px}
+.res .it>a{padding:12px}
+.it{flex-wrap:wrap}
+.it .ib{opacity:1;width:36px;height:36px;margin:6px 6px 0 0}
+.tip{position:static;flex:1 0 100%;max-width:none;margin:0;border:0;border-top:1px solid var(--line);border-radius:0 0 6px 6px;background:color-mix(in srgb,var(--c,#c9a45c) 7%,transparent);padding:9px 12px;box-shadow:none;font-size:.84rem}
+.cc{padding:14px}.ct{font-size:1.05rem}
+}
+
+.lg.frz{cursor:default;user-select:none}
+.lg.frz:hover{color:var(--mute);border-color:var(--line);background:rgba(8,20,42,.6)}
+
+/* ── v16: arama kutusu, geri düğmesi, yukarı çık, mobil iyileştirmeler ── */
+#q{padding-left:42px;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%237f97b5' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 14px center}
+#q::placeholder{color:#5f7894;opacity:1;transition:opacity .3s}
+#q.po::placeholder{opacity:0}
+.bk{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:0 14px;min-height:40px;font:600 .82rem var(--mono);color:var(--glow);background:rgba(46,168,255,.08);border:1px solid rgba(46,168,255,.35);border-radius:8px;cursor:pointer}
+.bk:hover{background:rgba(46,168,255,.14)}
+.up{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:9;width:46px;height:46px;border-radius:50%;border:1px solid rgba(201,164,92,.55);background:rgba(8,20,42,.92);color:var(--gold);font:700 1.1rem var(--mono);cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.5);backdrop-filter:blur(6px)}
+.up[hidden]{display:none}
+@media(min-width:721px){.up{display:none}}
+@media(max-width:720px){
+section{padding:28px 0}.sub{font-size:.92rem}
+.pbar{padding:9px 12px;font-size:.78rem}
+.cats{padding:12px 12px 10px;gap:6px}
+.cats button{min-height:38px;padding:0 14px;font-size:.82rem}
+.pmain{padding:12px}
+.legend{margin:0 -12px 12px;padding:2px 12px}
+#q{min-height:48px;border-radius:10px;font-size:16px}
+.gate{margin:0 12px 14px;width:calc(100% - 24px);min-height:48px}
+.cg{gap:10px}
+.cc{position:relative;display:grid;grid-template-columns:1fr auto;column-gap:10px;align-items:center;padding:14px 38px 14px 14px;border-radius:10px}
+.cc h3{grid-column:1}
+.cc .n{grid-column:2;grid-row:1;justify-self:end;padding:2px 9px;border:1px solid rgba(201,164,92,.4);border-radius:999px;font-size:.72rem}
+.cc p{grid-column:1/-1;margin-top:6px}
+.cc::after{content:"›";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.5rem;line-height:1}
+.ct{font-size:1.15rem}.grp h4{margin:18px 0 8px}
+.res .it{align-items:center;min-height:56px}
+.res .it>a{min-height:56px;display:flex;flex-direction:column;justify-content:center;padding:10px 12px}
+.res .it>a b{font-size:.95rem}
+.res .it:active{background:color-mix(in srgb,var(--c,#7f97b5) 14%,rgba(8,20,42,.55))}
+.it .ib{width:38px;height:38px;margin:0 8px 0 0}
+}
+
+/* ── v15: giriş uyarısı — şeffaf cam, altın çerçeve, hafif hareket ── */
+html[lang="en"] .t-tr{display:none}html:not([lang="en"]) .t-en{display:none}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+.dsc{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:18px;-webkit-tap-highlight-color:transparent}
+.dsc::before{content:"";position:absolute;inset:0;background:rgba(3,8,18,.10);-webkit-backdrop-filter:blur(1.2px);backdrop-filter:blur(1.2px);animation:dfade .35s ease backwards}
+html.dseen .dsc{display:none}
+.dsc .box{position:relative;z-index:1;overflow:hidden;overflow-y:auto;width:min(430px,100%);max-height:calc(100vh - 36px);max-height:calc(100dvh - 36px);padding:20px 22px;border:1px solid rgba(201,164,92,.38);border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.025) 42%,rgba(255,255,255,.06)),rgba(8,18,40,.15);-webkit-backdrop-filter:blur(11px) saturate(175%) brightness(1.06);backdrop-filter:blur(11px) saturate(175%) brightness(1.06);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 1px 0 0 rgba(255,255,255,.12),inset 0 -22px 34px rgba(120,190,255,.05),0 24px 60px rgba(0,0,0,.28),0 0 34px rgba(201,164,92,.12);text-shadow:0 1px 12px rgba(2,8,20,.75),0 0 2px rgba(2,8,20,.55);animation:dpop .5s cubic-bezier(.2,.8,.2,1) backwards}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.dsc::before{background:rgba(3,8,18,.8)}.dsc .box{background:#08142a}}
+.dsc .box::before{content:"";position:absolute;inset:-40%;pointer-events:none;background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.10) 46%,transparent 58%),radial-gradient(38% 28% at 28% 22%,rgba(120,200,255,.13),transparent 70%),radial-gradient(34% 26% at 78% 72%,rgba(201,164,92,.09),transparent 70%);animation:dwater 18s ease-in-out infinite alternate}
+.dsc .box::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:conic-gradient(from var(--a),rgba(228,196,120,0) 0 62%,rgba(228,196,120,.95) 80%,rgba(228,196,120,0) 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:dspin 7s linear infinite}
+.dsc .box>*{position:relative}
+.dsc .box:focus{outline:none}
+.dsc .grab{display:none}
+.dsc .dh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.dsc .dic{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--gold);border:1px solid rgba(201,164,92,.45);background:rgba(201,164,92,.08);box-shadow:0 0 16px rgba(201,164,92,.22)}
+.dsc .dk{font:.68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.dsc .dt{margin-top:1px;font-size:1.08rem;font-weight:700;line-height:1.25;color:var(--text)}
+.dsc .dh .lg{margin-left:auto;min-height:32px;padding:3px 11px;font-size:.74rem;background:rgba(255,255,255,.05);touch-action:manipulation}
+.dsc .dl{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
+.dsc .dl li{position:relative;padding-left:16px;font-size:.88rem;line-height:1.55;color:#e6f0fb}
+.dsc .dl li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(201,164,92,.6)}
+.dsc .dl b{color:#f0dcac;font-weight:700}
+.dsc .dok{display:block;margin-left:auto;min-height:44px;padding:10px 26px;border:1px solid rgba(150,215,255,.6);border-radius:999px;background:linear-gradient(180deg,rgba(100,195,255,.42),rgba(30,130,220,.30));color:#f4faff;font:inherit;font-size:.94rem;font-weight:700;text-shadow:0 1px 8px rgba(2,10,24,.6);cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 0 22px rgba(46,168,255,.3);transition:filter .15s,box-shadow .15s,transform .15s}
+.dsc .dok:hover,.dsc .dok:focus-visible{filter:brightness(1.12);box-shadow:0 0 28px rgba(46,168,255,.5);transform:translateY(-1px)}
+.dsc .dok:active{transform:scale(.98)}
+@keyframes dfade{from{opacity:0}}
+@keyframes dpop{from{opacity:0;transform:translateY(10px) scale(.97);filter:blur(4px)}}
+@keyframes dsheet{from{opacity:0;transform:translateY(46px)}}
+@keyframes dwater{to{transform:translate3d(7%,5%,0) rotate(9deg)}}
+@keyframes dspin{to{--a:360deg}}
+@media(prefers-reduced-motion:reduce){.dsc::before,.dsc .box,.dsc .box::before,.dsc .box::after{animation:none}.dsc .dok{transition:none}}
+/* telefon / dokunmatik: alttan açılan kart */
+@media(max-width:560px){
+.dsc{place-items:end center;padding:0}
+.dsc .box{width:100%;max-width:none;max-height:calc(100vh - 56px);max-height:calc(100dvh - 56px);padding:10px 18px calc(18px + env(safe-area-inset-bottom,0px));border-radius:22px 22px 0 0;border-bottom:0;animation:dsheet .5s cubic-bezier(.2,.8,.2,1) backwards}
+.dsc .grab{display:block;width:40px;height:4px;margin:0 auto 12px;border-radius:4px;background:rgba(255,255,255,.28)}
+.dsc .dl li{font-size:.92rem}
+.dsc .dh .lg{min-height:40px;padding:6px 14px;font-size:.78rem}
+.dsc .dok{width:100%;min-height:52px;font-size:1rem;text-align:center}
+}
+@media(max-height:430px) and (orientation:landscape){.dsc .box{max-height:calc(100dvh - 16px)}.dsc{padding:8px}}
+.dnote{color:var(--mute);font-size:.82rem}
+.dnote a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+</style>
+<script>try{if(sessionStorage.getItem("alem_disc_v1")==="1")document.documentElement.classList.add("dseen")}catch(e){}</script>
+<noscript><style>.dsc{display:none!important}</style></noscript>
+</head>
+<body class="gwpage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="tg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#F58529"/><stop offset=".55" stop-color="#DD2A7B"/><stop offset=".8" stop-color="#8134AF"/><stop offset="1" stop-color="#515BD4"/></linearGradient></defs><symbol id="xx" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol><symbol id="ig" viewBox="0 0 24 24"><rect x="2.4" y="2.4" width="19.2" height="19.2" rx="5.6" fill="none" stroke="url(#igg)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="url(#igg)" stroke-width="2.2"/><circle cx="17.5" cy="6.5" r="1.4" fill="url(#igg)" stroke="none"/></symbol><symbol id="gh" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol><symbol id="li" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol><symbol id="sg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="1.7 2.3"/><path d="M12 4.7a7.3 7.3 0 0 0-6.2 11.1l-1.1 3.6 3.7-1A7.3 7.3 0 1 0 12 4.7z"/></symbol></svg>
+<canvas id="net" aria-hidden="true"></canvas><div class="spot" aria-hidden="true"></div>
+<header><div class="wrap"><nav>
+  <a class="brand" href="index.html" aria-label="alemSecurity ana sayfa">
+    <svg viewBox="0 0 24 24" fill="#2ea8ff" aria-hidden="true"><path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.375 1.785 8.962 3.857-.706-1.299-1.335-2.46-1.936-3.572-.945-.733-1.93-1.688-3.941-2.723 1.382.359 2.371.773 3.143 1.236-6.108-11.376-6.604-12.883-8.699-17.763z"/></svg>
+    <span>alem<b>Security</b></span></a>
+  <ul>
+    <!-- Sayfa hazır olunca: aşağıdaki script'te SOON listesinden anahtarı sil (vision, roadmap). -->
+    <li><a href="index.html#hakkimda" data-i18n="nav.about">Hakkımda</a></li><li><a data-nav="vision" href="vizyon.html" data-i18n="nav.vision">Vizyon</a></li><li><a href="blog.html" data-i18n="nav.blog">Blog</a></li><li><a data-nav="roadmap" href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li><li><a href="#panel" aria-current="page" data-i18n="nav.gateway">Gateway</a></li><li><a href="index.html#iletisim" data-i18n="nav.contact">İletişim</a></li></ul><button id="lang" type="button" aria-label="Language">EN</button>
+</nav></div></header>
+
+<main class="wrap" id="top">
+  <section id="panel">
+    <h2>Gateway <span class="at">faydalikaynak</span></h2>
+    <p class="sub"><span data-i18n="faydalikaynak-resource-gateway-malware">Biriktirdiğim bağlantılar, konularına göre ayrılmış hâlde: malware, CTI, blog ve Telegram kanalları.</span></p>
+    <div class="panel">
+      <div class="pbar"><span class="dot"></span><span>faydalikaynak // gateway</span><span class="clock" id="clk"></span></div>
+      <div class="pbody">
+        <aside class="side">
+          <div class="stats"><div><b id="sN">0</b><small><span data-i18n="resources">kaynak</span></small></div><div><b id="sC">0</b><small><span data-i18n="categories">kategori</span></small></div><div><b id="sV">0</b><small><span data-i18n="shown">görünen</span></small></div></div>
+          <div class="cats" id="cats" role="group" data-i18n-aria="gw.cats"></div>
+          <button class="btn fill gate" id="gate" type="button"><span data-i18n="open-gateway">Kanala geç</span></button>
+        </aside>
+        <div class="pmain">
+          <div class="eb" id="eb" hidden></div>
+          <div class="legend" id="leg" role="group" data-i18n-aria="gw.lgd"></div>
+          <input id="q" type="search" data-i18n-ph="gw.search" autocomplete="off">
+          <div class="res" id="res"></div>
+          <noscript><p class="none">Bu bölüm için JavaScript gerekir. · This section needs JavaScript.</p></noscript>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="soc fsoc"><a class="b-gh" href="https://github.com/alemsec" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#gh"/></svg><span><b>GitHub</b><small data-i18n="soc.gh">Kodlarım ve açık kaynak işlerim</small></span></a></div>
+  <div class="copy"><span>© <span id="y">2026</span> alemSecurity</span><span class="dnote"><span class="t-tr">Bağlantılar yalnızca bilgilendirme amaçlıdır.</span><span class="t-en">Links are shared for information only.</span> <a href="#" id="discOpen"><span class="t-tr">Sorumluluk reddi</span><span class="t-en">Disclaimer</span></a></span></div>
+</div></footer>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var cv=document.getElementById('net'),cx=cv.getContext('2d'),star=document.getElementById('star'),spot=document.querySelector('.spot');
+  var W,H,D=Math.min(devicePixelRatio||1,2),P=[],m={x:-999,y:-999},t={x:innerWidth*.7,y:innerHeight*.25},c={x:t.x,y:t.y},ang=0;
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*D;cv.height=H*D;cx.setTransform(D,0,0,D,0,0);
+    var n=Math.min(90,Math.round(W*H/17000));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,g:i%3===0});}
+  var lw=innerWidth;size();addEventListener('resize',function(){if(innerWidth!==lw){lw=innerWidth;size();}});
+  addEventListener('pointermove',function(e){m.x=t.x=e.clientX;m.y=t.y=e.clientY;});
+  document.addEventListener('pointerleave',function(){m.x=m.y=-999;});
+  function loop(){
+    c.x+=(t.x-c.x)*.08;c.y+=(t.y-c.y)*.08;
+    spot.style.setProperty('--mx',c.x+'px');spot.style.setProperty('--my',c.y+'px');
+    ang+=.12;var dx=(c.x/W-.5),dy=(c.y/H-.5);
+    if(star)star.style.transform='perspective(900px) translate('+(-dx*24)+'px,'+(-dy*18)+'px) rotateX('+(-dy*16)+'deg) rotateY('+(Math.sin(ang*.05)*12+dx*26)+'deg)';
+    cx.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      var mdx=p.x-m.x,mdy=p.y-m.y,md=Math.sqrt(mdx*mdx+mdy*mdy);
+      if(md<140&&md>1){p.x+=mdx/md*.5;p.y+=mdy/md*.5;}
+      cx.fillStyle=p.g?'rgba(201,164,92,.75)':'rgba(76,195,255,.6)';cx.beginPath();cx.arc(p.x,p.y,1.3,0,6.283);cx.fill();
+      for(var j=i+1;j<P.length;j++){var q=P[j],ax=p.x-q.x,ay=p.y-q.y,d=ax*ax+ay*ay;
+        if(d<11000){cx.strokeStyle='rgba(46,168,255,'+(.2*(1-d/11000))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke();}}
+      if(md<170){cx.strokeStyle='rgba(76,195,255,'+(.5*(1-md/170))+')';cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(m.x,m.y);cx.stroke();}
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches)document.querySelectorAll('.card').forEach(function(k){
+    k.addEventListener('pointermove',function(e){var r=k.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height,S=k.style;
+      S.setProperty('--gx',x*100+'%');S.setProperty('--gy',y*100+'%');S.setProperty('--rx',(.5-y)*10+'deg');S.setProperty('--ry',(x-.5)*12+'deg');S.setProperty('--ty','-2px');});
+    k.addEventListener('pointerleave',function(){var S=k.style;S.removeProperty('--rx');S.removeProperty('--ry');S.removeProperty('--ty');});
+  });
+})();
+</script>
+<div class="ov" id="ov" role="dialog" aria-modal="true" hidden>
+  <div class="term"><div class="bar"><i></i><i></i><i></i></div><pre id="ovt"></pre></div>
+  <div class="row"><a class="btn fill" id="go" href="https://t.me/faydalikaynak" target="_blank" rel="noopener" hidden><svg class="tgi" aria-hidden="true"><use href="#tg"/></svg><span data-i18n="open-channel">Kanalı aç</span></a><button class="btn line" id="cl" type="button" style="font:inherit;background:none;cursor:pointer"><span data-i18n="close">Kapat</span></button></div>
+</div>
+<script>
+(function(){
+"use strict";
+/* ══ ÇEVİRİLER (data-i18n anahtarları) — yeni metin: HTML'e data-i18n="anahtar" ekle, buraya TR/EN yaz ══ */
+const I18N={
+ "tr": {
+  "about": "Selam, ben alem",
+  "contact": "Konuşalım",
+  "read-the-blog": "Yazıları oku",
+  "browse-resources": "Kaynaklara göz at",
+  "notes-resources-and-posts": "Siber güvenlik, Linux ve açık kaynak: öğrendikçe not alıyor, işe yarayanı burada paylaşıyorum.",
+  "someone-who-wonders-digs": "Bir şeyin nasıl çalıştığını öğrenmeden rahat edemem.",
+  "i-turn-what-i": "Siber güvenlikte öğrendiğim her şeyi önce kendime not alıyorum, sonra Telegram’da yazıya ve kaynak listesine çeviriyorum. Arch Linux kullanıyorum; sistemi kendi ellerimle kurmak, nasıl çalıştığını anlamanın en dürüst yolu.",
+  "beyond-technical-knowledge-im": "Teknik işlerin dışında tarihe ve kültüre de düşkünüm. Kütüphane kanalımda yazılımdan İslam tarihine uzanan bir arşiv var.",
+  "cybersecurity": "siber güvenlik",
+  "software": "yazılım",
+  "history": "tarih",
+  "islamic-history": "islam tarihi",
+  "when-one-door-closes": "Bir kapı kapanırsa, bir kapı açılır; mühim olan aramaktır.",
+  "knowledge-grows-when-shared": "Bilgi, paylaştıkça çoğalır.",
+  "faydalikaynak-resource-gateway-malware": "Beğendiğim ve işime yarayan bağlantılar; malware, CTI, blog ve Telegram kanalları konu konu ayrıldı.",
+  "resources": "kaynak",
+  "categories": "kategori",
+  "shown": "görünen",
+  "open-gateway": "Kanala geç",
+  "open-channel": "Kanalı aç",
+  "close": "Kapat",
+  "channels-and-resources": "Telegram’da beni bul",
+  "all-on-telegram-all": "Üç kanal; üçü de açık ve ücretsiz.",
+  "telegram-blog": "Yazılar ve notlar",
+  "my-personal-blog-posts": "Öğrendikçe yazdığım uzun notlar.",
+  "cybersecurity-resources": "Bağlantı arşivi",
+  "cybersecurity-resources-tools-and": "Araçlar, rehberler ve siteler; hepsi tek yerde.",
+  "library": "Kütüphane",
+  "broad-resource-archive": "Okumayı sevenlere",
+  "cybersecurity-software-islamic-history": "Siber güvenlikten İslam tarihine uzanan, her gün biraz daha büyüyen bir arşiv.",
+  "get-in-touch": "Soru, öneri ya da iş birliği: hangisi sana yakınsa oradan yaz.",
+  "soc.li": "Profesyonel profilim",
+  "soc.sg": "Uçtan uca şifreli",
+  "soc.gh": "Kodlarım ve açık kaynak işlerim",
+  "foot": "Arch Linux üzerinde",
+  "alankabut-69": "Ankebût, 69 · Elmalılı M. Hamdi Yazır meali",
+  "as-for-those-who": "Bizim uğrumuzda mücahede edenlere gelince, elbette biz onlara yollarımızı gösteririz ve şüphesiz ki Allah, her halde muhsinlerle beraberdir.",
+  "nav.home": "Ana sayfa",
+  "gw.favl": "Favori",
+  "gw.all": "Kategoriler",
+  "gw.links": "link",
+  "gw.res": "sonuç",
+  "gw.info": "Ne işe yarar?",
+  "gw.tgd": "Telegram kanalı",
+  "gw.gen": "Güvenlik kaynağı",
+  "gw.lgd": "Renk filtresi",
+  "gw.l.sari": "Favori",
+  "gw.l.kirmizi": "Dikkat: canlı zararlı içerebilir, sanal makinede aç",
+  "gw.l.mor": "İleri seviye",
+  "gw.l.yesil": "Ücretsiz, yeni başlayanlara uygun",
+  "gw.s.sari": "Favori",
+  "gw.s.kirmizi": "Dikkat: VM’de aç",
+  "gw.s.mor": "İleri seviye",
+  "gw.s.yesil": "Ücretsiz",
+  "gw.ph": "Ara:",
+  "gw.up": "Yukarı çık",
+  "gw.legend": "Yıldızlı olanlar favorilerim; her kategoride en üstte.",
+  "gw.teaser": "Malware, CTI, blog ve Telegram kanalları; konu konu ayrılmış, aranabilir bir kaynak arşivi. Favorilerimi yıldızla işaretledim.",
+  "gw.open": "Arşivi aç",
+  "gw.tg": "Telegram kanalı",
+  "nav.about": "Hakkımda",
+  "nav.vision": "Vizyon",
+  "nav.blog": "Blog",
+  "nav.roadmap": "Roadmap",
+  "nav.gateway": "Gateway",
+  "nav.channels": "Kanallar",
+  "nav.contact": "İletişim",
+  "gw.search": "Ara: ad, URL veya açıklama (nmap, owasp, linux…)",
+  "gw.cats": "Kategoriler",
+  "gw.none": "Sonuç yok. Başka bir kelime dene ya da kanalda ara.",
+  "ov.1": "bağlantı kuruluyor...",
+  "ov.2": "kanal çözülüyor: t.me/faydalikaynak",
+  "ov.3": "geçit hazır.",
+  "term.who": "alemSecurity — öğrenir, not alır, paylaşırım",
+  "term.res": "kaynaklar",
+  "term.lib": "kutuphane",
+  "term.free": "hepsi-ucretsiz",
+  "term.contact": "iletisim --bana-yaz"
+ },
+ "en": {
+  "about": "Hi, I’m alem",
+  "contact": "Let’s talk",
+  "read-the-blog": "Read the posts",
+  "browse-resources": "Browse the resources",
+  "notes-resources-and-posts": "Cybersecurity, Linux and open source: I take notes as I learn and share what turns out useful.",
+  "someone-who-wonders-digs": "I can’t rest until I know how something works.",
+  "i-turn-what-i": "Whatever I learn in security goes into my own notes first, then into posts and resource lists on Telegram. I run Arch Linux; building the system by hand is the most honest way I know to understand it.",
+  "beyond-technical-knowledge-im": "Outside the technical work, I’m drawn to history and culture. My library channel holds an archive that runs from software to Islamic history.",
+  "cybersecurity": "cybersecurity",
+  "software": "software",
+  "history": "history",
+  "islamic-history": "islamic history",
+  "when-one-door-closes": "When one door closes, another opens; what matters is to keep searching.",
+  "knowledge-grows-when-shared": "Knowledge grows when shared.",
+  "faydalikaynak-resource-gateway-malware": "Links I like and actually use, sorted by topic: malware, CTI, blogs and Telegram channels.",
+  "resources": "resources",
+  "categories": "categories",
+  "shown": "shown",
+  "open-gateway": "Go to the channel",
+  "open-channel": "Open channel",
+  "close": "Close",
+  "channels-and-resources": "Find me on Telegram",
+  "all-on-telegram-all": "Three channels, all open and free.",
+  "telegram-blog": "Posts and notes",
+  "my-personal-blog-posts": "Longer notes I write as I learn.",
+  "cybersecurity-resources": "Link archive",
+  "cybersecurity-resources-tools-and": "Tools, guides and sites, all in one place.",
+  "library": "Library",
+  "broad-resource-archive": "For people who love to read",
+  "cybersecurity-software-islamic-history": "An archive that grows a little every day, from cybersecurity to Islamic history.",
+  "get-in-touch": "Questions, ideas or collaboration: write wherever suits you.",
+  "soc.li": "My professional profile",
+  "soc.sg": "End-to-end encrypted",
+  "soc.gh": "My code and open-source work",
+  "foot": "Running on Arch Linux",
+  "alankabut-69": "Al-Ankabut, 69",
+  "as-for-those-who": "As for those who strive in Our cause, We will surely show them Our ways, and indeed Allah is with those who do good.",
+  "nav.home": "Home",
+  "gw.favl": "Favorite",
+  "gw.all": "Categories",
+  "gw.links": "links",
+  "gw.res": "results",
+  "gw.info": "What is it for?",
+  "gw.tgd": "Telegram channel",
+  "gw.gen": "Security resource",
+  "gw.lgd": "Color filter",
+  "gw.l.sari": "Favorite",
+  "gw.l.kirmizi": "Caution: live malware, open in a VM",
+  "gw.l.mor": "Advanced",
+  "gw.l.yesil": "Free, beginner friendly",
+  "gw.s.sari": "Favorite",
+  "gw.s.kirmizi": "Caution: use a VM",
+  "gw.s.mor": "Advanced",
+  "gw.s.yesil": "Free",
+  "gw.ph": "Search:",
+  "gw.up": "Back to top",
+  "gw.legend": "Starred ones are my favorites; they sit at the top of each category.",
+  "gw.teaser": "A searchable archive of malware, CTI, blog and Telegram links, sorted by topic. My favorites carry a star.",
+  "gw.open": "Open the archive",
+  "gw.tg": "Telegram channel",
+  "nav.about": "About",
+  "nav.vision": "Vision",
+  "nav.blog": "Blog",
+  "nav.roadmap": "Roadmap",
+  "nav.gateway": "Gateway",
+  "nav.channels": "Channels",
+  "nav.contact": "Contact",
+  "gw.search": "Search name, URL or description (nmap, owasp, linux…)",
+  "gw.cats": "Categories",
+  "gw.none": "No results. Try another word or search the channel.",
+  "ov.1": "connecting...",
+  "ov.2": "resolving channel: t.me/faydalikaynak",
+  "ov.3": "gateway ready.",
+  "term.who": "alemSecurity — I learn, take notes, share",
+  "term.res": "resources",
+  "term.lib": "library",
+  "term.free": "all-free",
+  "term.contact": "contact --write-me"
+ }
+};
+
+/* ══ GATEWAY KATEGORİLERİ (sıra = ekrandaki sıra) ══ */
+/* ══ KATEGORİLER — yeni kategori = bir blok ekle (id, name, desc, istersen subs) ══ */
+const CATEGORIES=[
+  {"id": "methodology", "name": {"tr": "Metodoloji", "en": "Methodology"}, "desc": {"tr": "Saldırı–savunma metodolojisi ve öğrenme platformları.", "en": "Attack–defense methodology and learning platforms."}},
+  {"id": "malware", "name": {"tr": "Malware", "en": "Malware"}, "desc": {"tr": "Zararlı yazılım analizi, örnek paylaşımı ve tersine mühendislik araçları.", "en": "Malware analysis, sample sharing and reverse-engineering tools."}, "subs": [{"id": "ornek", "name": {"tr": "Örnek arşivleri", "en": "Sample archives"}}, {"id": "sandbox", "name": {"tr": "Sandbox ve analiz", "en": "Sandbox and analysis"}}, {"id": "re", "name": {"tr": "Tersine mühendislik", "en": "Reverse engineering"}}, {"id": "ioc", "name": {"tr": "IOC ve takip", "en": "IOC and tracking"}}, {"id": "shell", "name": {"tr": "Shell ve yetki yükseltme", "en": "Shells and privilege escalation"}}]},
+  {"id": "cti", "name": {"tr": "CTI (Siber Tehdit İstihbaratı)", "en": "CTI (Cyber Threat Intelligence)"}, "desc": {"tr": "CTI = Siber Tehdit İstihbaratı; OSINT = Açık Kaynak İstihbaratı. Tarama motorları, DNS, sızıntı ve analiz araçları.", "en": "CTI = Cyber Threat Intelligence; OSINT = Open-Source Intelligence. Scan engines, DNS, leak and analysis tools."}},
+  {"id": "leak", "name": {"tr": "Fidye & sızıntı takibi", "en": "Ransomware & leak tracking"}, "desc": {"tr": "Fidye yazılımı grupları, sızıntı siteleri ve veri ihlali sorgu servisleri.", "en": "Ransomware groups, leak sites and breach-lookup services."}},
+  {"id": "link", "name": {"tr": "Link analizi", "en": "Link analysis"}, "desc": {"tr": "Şüpheli linki açmadan inceleme, kısa link çözme, arşiv.", "en": "Inspect suspicious links safely: unshorten, trace, archive."}},
+  {"id": "osint", "name": {"tr": "OSINT", "en": "OSINT"}, "desc": {"tr": "Kullanıcı adı, hesap ve açık kaynak araştırma araçları.", "en": "Username, account and open-source research tools."}},
+  {"id": "blog", "name": {"tr": "Blog / Arşiv", "en": "Blog / Archive"}, "desc": {"tr": "Araştırma blogları, arşivler ve derleme (awesome) listeleri.", "en": "Research blogs, archives and curated (awesome) lists."}},
+  {"id": "privacy", "name": {"tr": "Gizlilik", "en": "Privacy"}, "desc": {"tr": "Gizlilik ve güvenlik araçları ile rehberleri.", "en": "Privacy and security tools and guides."}},
+  {"id": "mail", "name": {"tr": "E-posta", "en": "Email"}, "desc": {"tr": "Geçici adresler, takma adlar ve gizli posta servisleri.", "en": "Disposable addresses, aliases and private mail services."}},
+  {"id": "tr", "name": {"tr": "Türkiye / Resmî", "en": "Turkey / Official"}, "desc": {"tr": "Resmî kurumlar, bildirim ve ihbar adresleri.", "en": "Official agencies, reporting and advisory pages."}},
+  {"id": "vds", "name": {"tr": "VDS ve hosting", "en": "VDS and hosting"}, "desc": {"tr": "Sunucu ve VDS sağlayıcıları.", "en": "Server and VDS providers."}},
+  {"id": "search", "name": {"tr": "Arama motorları", "en": "Search engines"}, "desc": {"tr": "Alternatif ve gizlilik odaklı arama.", "en": "Alternative and privacy-focused search."}},
+  {"id": "tg-malware", "name": {"tr": "Telegram · Malware kanalları", "en": "Telegram · Malware channels"}, "desc": {"tr": "Malware odaklı Telegram kanalları.", "en": "Malware-focused Telegram channels."}},
+  {"id": "telegram", "name": {"tr": "Telegram · Siber güvenlik kanalları", "en": "Telegram · Cybersecurity channels"}, "desc": {"tr": "Pentest, OSINT, red/blue team ve Linux üzerine genel kanallar.", "en": "General channels on pentesting, OSINT, red/blue team and Linux."}},
+  {"id": "tgk", "name": {"tr": "Telegram keşif", "en": "Telegram discovery"}, "desc": {"tr": "Kanal bulma ve Telegram analiz araçları.", "en": "Channel discovery and Telegram analytics tools."}},
+  {"id": "forum", "name": {"tr": "Forum / topluluk", "en": "Forums / communities"}, "desc": {"tr": "Güvenlik ve teknoloji toplulukları.", "en": "Security and tech communities."}},
+  {"id": "index", "name": {"tr": "Index", "en": "Index"}, "desc": {"tr": "Link dizinleri: awesome listeler, OSINT Framework, start.me sayfaları.", "en": "Link directories: awesome lists, OSINT Framework, start.me pages."}}
+];
+
+/* ══ LİNKLER — yeni link = TEK SATIR ══
+   [url, ad, TR açıklama, EN açıklama, "kategori,kategori/altbaşlık", "renkler"]
+   renkler: sari ★ favori · kirmizi ⚠ dikkat (canlı zararlı, sanal makinede aç) · mor ◆ ileri · yesil ● ücretsiz/yeni başlayan
+   ad boşsa alan adı yazılır; Telegram için t.me/kanal yaz */
+/* ══ HAZIR SATIRLAR — kopyala, LINKS içine yapıştır, boşlukları doldur ══
+   ["","","TR açıklama","EN description","methodology",""],
+   ["","","TR açıklama","EN description","malware",""],
+   ["","","TR açıklama","EN description","malware/ornek",""],
+   ["","","TR açıklama","EN description","malware/sandbox",""],
+   ["","","TR açıklama","EN description","malware/re",""],
+   ["","","TR açıklama","EN description","malware/ioc",""],
+   ["","","TR açıklama","EN description","malware/shell",""],
+   ["","","TR açıklama","EN description","cti",""],
+   ["","","TR açıklama","EN description","blog",""],
+   ["","","TR açıklama","EN description","privacy",""],
+   ["","","TR açıklama","EN description","tg-malware",""],
+   ["","","TR açıklama","EN description","telegram",""],
+   ["","","TR açıklama","EN description","index",""],
+   ad boşsa alan adı görünür · son alan renk: "sari","kirmizi","mor","yesil" (virgülle birden fazla) */
+const LINKS=[
+  ["attack.mitre.org", "MITRE ATT&CK", "Saldırganlar nasıl saldırır? (TTP)", "How do attackers operate? (TTPs)", "methodology", "sari"],
+  ["capec.mitre.org", "CAPEC", "Yaygın saldırı kalıpları", "Common attack patterns", "methodology", ""],
+  ["d3fend.mitre.org", "MITRE D3FEND", "Nasıl savunuruz?", "How do we defend?", "methodology", ""],
+  ["owasp.org/www-project-top-ten/", "OWASP Top 10", "Yaygın web zafiyetleri", "Common web vulnerabilities", "methodology", "sari,yesil"],
+  ["tryhackme.com", "TryHackMe", "Hiçbir şey bilmiyorsan buradan başla", "Start here if you’re new", "methodology", "sari,yesil"],
+  ["hackthebox.com", "Hack The Box", "Orta ve ileri seviye", "Intermediate and advanced", "methodology", ""],
+  ["portswigger.net/web-security", "PortSwigger Academy", "İleri seviye web güvenliği", "Advanced web security", "methodology", "yesil"],
+  ["vulnhub.com", "VulnHub", "Canlı deneyim için zafiyetli makineler", "Vulnerable VMs for hands-on practice", "methodology", "yesil"],
+  ["pentesterlab.com", "PentesterLab", "Kendini test et", "Test yourself", "methodology", ""],
+  ["pwn.college", "", "Düşük seviye tersine mühendislik", "Low-level reverse engineering", "methodology", "mor"],
+  ["awesome-privacy.xyz", "", "Gizlilik araç listesi", "Privacy tool list", "privacy,index", ""],
+  ["thenewoil.org", "", "Gizlilik rehberi", "Privacy guide", "privacy", ""],
+  ["prism-break.org", "", "Gizlilik alternatifleri", "Privacy alternatives", "privacy,index", ""],
+  ["ssd.eff.org", "", "EFF savunma rehberi", "EFF defense guide", "privacy", "yesil"],
+  ["privacyguides.org", "", "Gizlilik rehberleri", "Privacy guides", "privacy", "yesil"],
+  ["techlore.tech", "", "Gizlilik eğitimi", "Privacy education", "privacy", ""],
+  ["anonymousplanet.net", "", "Anonimlik rehberi", "Anonymity guide", "privacy", ""],
+  ["qubes-os.org", "", "İzole işletim sistemi", "Compartmentalized OS", "privacy", "mor"],
+  ["tails.net", "", "Anonim canlı sistem", "Anonymous live OS", "privacy", ""],
+  ["whonix.org", "", "Tor’lu işletim sistemi", "Tor-based OS", "privacy", "mor"],
+  ["grapheneos.org", "", "Güvenli Android", "Hardened Android", "privacy", ""],
+  ["calyxos.org", "", "Gizlilik Android’i", "Privacy Android", "privacy", ""],
+  ["mullvad.net", "", "Gizlilik VPN’i", "Privacy VPN", "privacy", ""],
+  ["quad9.net", "", "Güvenli DNS", "Secure DNS", "privacy", ""],
+  ["nextdns.io", "", "DNS filtreleme", "DNS filtering", "privacy", ""],
+  ["geti2p.net", "", "I2P anonim ağı", "I2P anonymous network", "privacy", ""],
+  ["torproject.org", "", "Tor ağı", "Tor network", "privacy", "yesil"],
+  ["librewolf.net", "", "Gizlilik tarayıcısı", "Privacy browser", "privacy", ""],
+  ["signal.org", "", "Şifreli mesajlaşma", "Encrypted messaging", "privacy", "yesil"],
+  ["simplex.chat", "", "Kimliksiz mesajlaşma", "Identity-free messaging", "privacy", ""],
+  ["getsession.org", "", "Anonim mesajlaşma", "Anonymous messaging", "privacy", ""],
+  ["element.io", "", "Matrix istemcisi", "Matrix client", "privacy", ""],
+  ["threema.com", "", "Şifreli mesajlaşma", "Encrypted messaging", "privacy", ""],
+  ["briarproject.org", "", "Çevrimdışı mesajlaşma", "Offline messaging", "privacy", ""],
+  ["delta.chat", "", "E-posta tabanlı sohbet", "Email-based chat", "privacy", ""],
+  ["onionshare.org", "", "Anonim dosya paylaşımı", "Anonymous file sharing", "privacy", ""],
+  ["proton.me", "", "Şifreli e-posta", "Encrypted email", "privacy,mail", ""],
+  ["tuta.com", "", "Şifreli e-posta", "Encrypted email", "privacy,mail", ""],
+  ["simplelogin.io", "", "E-posta takma adı", "Email aliases", "privacy,mail", ""],
+  ["keepass.info", "", "Yerel parola yöneticisi", "Local password manager", "privacy", ""],
+  ["veracrypt.io", "", "Disk şifreleme", "Disk encryption", "privacy", ""],
+  ["cryptomator.org", "", "Bulut şifreleme", "Cloud encryption", "privacy", ""],
+  ["bleachbit.org", "", "Güvenli dosya silme", "Secure file cleaner", "privacy", ""],
+  ["bazaar.abuse.ch", "", "Zararlı örnek arşivi", "Malware sample archive", "malware/ornek", "kirmizi"],
+  ["threatfox.abuse.ch", "", "IOC paylaşım platformu", "IOC sharing platform", "malware/ioc", ""],
+  ["tria.ge", "", "Ücretsiz sandbox", "Free sandbox", "malware/sandbox", "yesil"],
+  ["intezer.com", "", "Kod benzerlik analizi", "Code similarity analysis", "malware/sandbox", ""],
+  ["ghidra-sre.org", "", "Tersine mühendislik aracı", "Reverse engineering tool", "malware/re", "mor"],
+  ["vx-underground.org", "", "Zararlı yazılım arşivi", "Malware archive", "malware/ornek", "kirmizi"],
+  ["loldrivers.io", "", "Zafiyetli sürücü listesi", "Vulnerable driver list", "malware/ioc", ""],
+  ["lolrmm.io", "", "Kötüye kullanılan RMM", "Abused RMM tools", "malware/ioc", ""],
+  ["unpac.me", "", "Otomatik unpacker", "Automated unpacker", "malware/sandbox", "mor"],
+  ["koodous.com", "", "Android zararlı analizi", "Android malware analysis", "malware/ornek", ""],
+  ["filescan.io", "", "Dosya tarama sandbox’ı", "File scan sandbox", "malware/sandbox", ""],
+  ["malshare.com", "", "Zararlı örnek deposu", "Malware sample repo", "malware/ornek", "kirmizi"],
+  ["cybercrime-tracker.net", "", "C2 sunucu takibi", "C2 server tracker", "malware/ioc", ""],
+  ["malpedia.caad.fkie.fraunhofer.de", "", "Zararlı ansiklopedisi", "Malware encyclopedia", "malware/ioc", ""],
+  ["class.malware.re", "", "Malware analiz dersi", "Malware analysis course", "malware/re", "mor"],
+  ["revshells.com", "", "Reverse shell üretici", "Reverse shell generator", "malware/shell", ""],
+  ["gtfobins.github.io", "", "Yetki yükseltme listesi", "Privilege escalation list", "malware/shell", ""],
+  ["docguard.io", "", "Zararlı belge analizi", "Malicious document analysis", "malware", ""],
+  ["tmpout.sh", "", "Tersine mühendislik zini", "Reverse engineering zine", "blog", "mor"],
+  ["phrack.org", "", "Hacker e-dergisi", "Hacker e-zine", "blog", "mor"],
+  ["elhacker.info", "", "", "", "blog", ""],
+  ["midnightcomputerlab.net/directory/", "", "", "", "blog", ""],
+  ["gynvael.coldwind.pl", "", "Güvenlik araştırma blogu", "Security research blog", "blog", ""],
+  ["0xtoxin.github.io", "", "", "", "blog", ""],
+  ["d01a.github.io", "", "", "", "blog", ""],
+  ["hasherezade.github.io", "", "Malware analiz blogu", "Malware analysis blog", "blog", "mor"],
+  ["alchemistowl.org/pocorgtfo/", "", "PoC GTFO dergisi", "PoC GTFO journal", "blog", ""],
+  ["mehmetince.net/posts/", "", "Türkçe güvenlik yazıları", "Turkish security posts", "blog", ""],
+  ["vmfunc.re", "", "", "", "blog", ""],
+  ["ducks.party", "", "", "", "blog", ""],
+  ["itm4n.github.io", "", "Windows güvenlik blogu", "Windows security blog", "blog", ""],
+  ["blog.coffinsec.com", "", "", "", "blog", ""],
+  ["cocomelonc.github.io", "", "Malware geliştirme yazıları", "Malware dev posts", "blog", ""],
+  ["blackfes.com", "", "", "", "blog", ""],
+  ["ti.qianxin.com/blog/", "", "Tehdit istihbaratı blogu", "Threat intel blog", "blog", ""],
+  ["gokhansengun.com", "", "", "", "blog", ""],
+  ["rapid7.com/blog/", "", "Şirket güvenlik blogu", "Vendor security blog", "blog", ""],
+  ["thedfirreport.com", "", "Saldırı vaka raporları", "Intrusion case reports", "blog", ""],
+  ["reverse.put.as", "", "Tersine mühendislik yazıları", "Reverse engineering posts", "blog", "mor"],
+  ["labs.nettitude.com/blog/", "", "Kırmızı takım blogu", "Red team blog", "blog", ""],
+  ["windowsir.blogspot.com", "", "Windows adli bilişim", "Windows forensics", "blog", ""],
+  ["securelist.com", "", "Kaspersky araştırmaları", "Kaspersky research", "blog", ""],
+  ["thehackernews.com", "", "Güvenlik haberleri", "Security news", "blog", ""],
+  ["schneier.com", "", "Güvenlik yorumları", "Security commentary", "blog", ""],
+  ["polaryse.github.io", "", "", "", "blog", ""],
+  ["infosecwriteups.com", "", "Güvenlik yazıları", "Security write-ups", "blog", ""],
+  ["devilinside.me", "", "", "", "blog", ""],
+  ["basriakkaya.com", "", "", "", "blog", ""],
+  ["0xdf.gitlab.io/cheatsheets/offsec", "", "Offsec kopya kâğıdı", "Offsec cheat sheets", "blog", ""],
+  ["blog.calif.io", "", "Güvenlik araştırma blogu", "Security research blog", "blog", ""],
+  ["googleprojectzero.blogspot.com", "", "Sıfırıncı gün araştırması", "Zero-day research", "blog", "mor"],
+  ["acikkaynakfikirler.com/egitimler/", "", "", "", "blog", ""],
+  ["mirror.sibersunucu.com", "", "", "", "blog", ""],
+  ["github.com/jivoi/awesome-osint", "", "OSINT derleme listesi", "OSINT curated list", "blog,index", ""],
+  ["github.com/pluja/awesome-privacy", "", "Gizlilik derleme listesi", "Privacy curated list", "blog,index", ""],
+  ["awesome-selfhosted.net", "", "Kendi sunucunda barındır", "Self-hosted apps", "blog,index", ""],
+  ["github.com/0xor0ne/awesome-list", "", "", "", "blog,index", ""],
+  ["github.com/t1Sh1n4/mlwr_blogs", "", "Malware blog listesi", "Malware blog list", "blog,index", ""],
+  ["github.com/CyberMonitor/APT_CyberCriminal_Campagin_Collections", "", "APT kampanya arşivi", "APT campaign archive", "blog,index", ""],
+  ["ttmo.re/kutuphane/", "", "Kütüphane dizini", "Library index", "blog,index", ""],
+  ["css.csail.mit.edu/6.5660/years.html", "", "MIT güvenlik dersi", "MIT security course", "blog", ""],
+  ["overthewire.org", "", "Wargame oyunları", "Wargames", "blog", "yesil"],
+  ["reddit.com/r/hacking/wiki", "", "Hacking wiki’si", "Hacking wiki", "blog,index", ""],
+  ["shodan.io", "", "İnternet cihaz arama", "Internet device search", "cti", ""],
+  ["censys.io", "", "İnternet tarama motoru", "Internet scan engine", "cti", ""],
+  ["binaryedge.io", "", "Saldırı yüzeyi taraması", "Attack surface scanning", "cti", ""],
+  ["onyphe.io", "", "Siber savunma araması", "Cyber defense search", "cti", ""],
+  ["greynoise.io", "", "Tarama gürültüsü analizi", "Scan noise analysis", "cti", ""],
+  ["fofa.info", "", "Siber varlık arama", "Cyber asset search", "cti", ""],
+  ["zoomeye.org", "", "Siber varlık arama", "Cyber asset search", "cti", ""],
+  ["netlas.io", "", "İnternet tarama araması", "Internet scan search", "cti", ""],
+  ["fullhunt.io", "", "Saldırı yüzeyi keşfi", "Attack surface discovery", "cti", ""],
+  ["leakix.net", "", "Sızıntı ve açık servis", "Leaks and exposed services", "cti,leak", ""],
+  ["criminalip.io", "", "Tehdit IP istihbaratı", "Threat IP intelligence", "cti", ""],
+  ["odin.io", "", "İnternet tarama motoru", "Internet scan engine", "cti", ""],
+  ["securitytrails.com", "", "DNS geçmişi", "DNS history", "cti", ""],
+  ["scans.io", "", "Tarama veri kümeleri", "Scan datasets", "cti", ""],
+  ["intelx.io", "", "İstihbarat araması", "Intelligence search", "cti,leak", ""],
+  ["hudsonrock.com", "", "Infostealer istihbaratı", "Infostealer intelligence", "cti,leak", ""],
+  ["fireintel.io", "", "", "", "cti", ""],
+  ["threatmon.io", "", "Tehdit izleme", "Threat monitoring", "cti", ""],
+  ["socradar.io", "", "Tehdit istihbaratı", "Threat intelligence", "cti", ""],
+  ["brandefense.io", "", "Dijital risk koruması", "Digital risk protection", "cti", ""],
+  ["pulsedive.com", "", "Tehdit istihbaratı", "Threat intelligence", "cti", ""],
+  ["vulners.com", "", "Zafiyet veritabanı", "Vulnerability database", "cti", ""],
+  ["crt.sh", "", "Sertifika şeffaflığı", "Certificate transparency", "cti", ""],
+  ["certstream.calidog.io", "", "Canlı sertifika akışı", "Live certificate stream", "cti", ""],
+  ["urlscan.io", "", "URL tarama analizi", "URL scan analysis", "cti,link", ""],
+  ["virustotal.com", "", "Dosya ve URL tarama", "File and URL scan", "cti,link", "yesil"],
+  ["talosintelligence.com", "", "Cisco tehdit istihbaratı", "Cisco threat intel", "cti", ""],
+  ["abuseipdb.com", "", "Kötü IP veritabanı", "Abusive IP database", "cti", ""],
+  ["apivoid.com", "", "Tehdit API’leri", "Threat APIs", "cti", ""],
+  ["phishtank.com", "", "Oltalama veritabanı", "Phishing database", "cti", ""],
+  ["viewdns.info", "", "DNS sorgu araçları", "DNS lookup tools", "cti", ""],
+  ["dnslytics.com", "", "DNS analiz araçları", "DNS analysis tools", "cti", ""],
+  ["dnsviz.net", "", "DNSSEC görselleştirme", "DNSSEC visualization", "cti", ""],
+  ["dnstwister.report", "", "Alan adı benzetmeleri", "Domain lookalikes", "cti", ""],
+  ["bgpview.io", "", "BGP ve ASN bilgisi", "BGP and ASN info", "cti", ""],
+  ["builtwith.com", "", "Site teknoloji tespiti", "Site tech detection", "cti", ""],
+  ["publicwww.com", "", "Kaynak kod arama", "Source code search", "cti", ""],
+  ["grep.app", "", "Kod arama motoru", "Code search engine", "cti", ""],
+  ["searchcode.com", "", "Kod arama motoru", "Code search engine", "cti", ""],
+  ["grayhatwarfare.com", "", "Açık bucket arama", "Open bucket search", "cti", ""],
+  ["hunter.io", "", "E-posta bulma", "Email finder", "cti", ""],
+  ["wigle.net", "", "Kablosuz ağ haritası", "Wi-Fi network map", "cti", ""],
+  ["hackertarget.com", "", "Çevrimiçi tarama araçları", "Online scan tools", "cti", ""],
+  ["clouddiff.org", "", "", "", "cti", ""],
+  ["web-check.xyz", "", "Site analiz aracı", "Site analysis tool", "cti", ""],
+  ["securityheaders.com", "", "HTTP başlık kontrolü", "HTTP header check", "cti", ""],
+  ["district4labs.com", "", "", "", "cti", ""],
+  ["ivre.rocks", "", "Ağ keşif çerçevesi", "Network recon framework", "cti", ""],
+  ["intelligencesecurity.io", "", "", "", "cti", ""],
+  ["behindtheemail.com", "", "E-posta OSINT’i", "Email OSINT", "cti,osint", ""],
+  ["whatsmynameweb.netlify.app", "", "Kullanıcı adı arama", "Username search", "cti,osint", ""],
+  ["osint.link", "", "OSINT bağlantı dizini", "OSINT link index", "cti,index,osint", ""],
+  ["osintframework.com", "", "OSINT araç dizini", "OSINT tool index", "cti,index,osint", "yesil"],
+  ["osint.al", "", "Bağlantı derlemesi", "Link aggregator", "cti,index", ""],
+  ["link-base.ms", "", "OSINT bağlantı derlemesi", "OSINT link aggregator", "cti,index", ""],
+  ["bgpstream.com", "", "BGP olay takibi", "BGP event tracking", "cti", ""],
+  ["leakradar.io", "", "Sızıntı arama", "Leak search", "cti", ""],
+  ["breachsense.com", "", "Sızıntı izleme", "Breach monitoring", "cti", ""],
+  ["spycloud.com", "", "Sızıntı istihbaratı", "Breach intelligence", "cti", ""],
+  ["darksearch.io", "", "Dark web arama", "Dark web search", "cti", ""],
+  ["ipsniper.info", "", "", "", "cti", ""],
+  ["escape.tech", "", "API güvenlik testi", "API security testing", "cti", ""],
+  ["start.me/p/aNrBJX/3-iter-bit", "", "start.me dizin sayfası", "start.me index page", "index", ""],
+  ["t.me/vxunderground", "", "", "", "tg-malware", "kirmizi"],
+  ["t.me/vekils3c", "", "Türkçe kanal", "Turkish channel", "tg-malware", "kirmizi"],
+  ["t.me/malwr", "", "", "", "tg-malware", "kirmizi"],
+  ["t.me/defcon_news", "", "", "", "tg-malware", "kirmizi"],
+  ["t.me/GithubBox", "", "", "", "tg-malware", "kirmizi"],
+  ["t.me/MalwareResearch", "", "", "", "tg-malware", "kirmizi"],
+  ["t.me/androidMalware", "", "", "", "tg-malware", "kirmizi"],
+  ["t.me/AnonOperation", "", "", "", "telegram", ""],
+  ["t.me/activedirectorypentesting", "", "", "", "telegram", ""],
+  ["t.me/cibsecurity", "", "", "", "telegram", ""],
+  ["t.me/RalfHackerChannel", "", "", "", "telegram", ""],
+  ["t.me/Social_engineering", "", "", "", "telegram", ""],
+  ["t.me/cybersec_academy", "", "", "", "telegram", ""],
+  ["t.me/WebHacking", "", "", "", "telegram", ""],
+  ["t.me/Bl4ck_Room", "", "", "", "telegram", ""],
+  ["t.me/kind_hack", "", "", "", "telegram", ""],
+  ["t.me/BlueTeamKit", "", "", "", "telegram", ""],
+  ["t.me/infosecmemes", "", "", "", "telegram", ""],
+  ["t.me/bezopasno_soft", "", "", "", "telegram", ""],
+  ["t.me/KiberTehlukesizlik", "", "", "", "telegram", ""],
+  ["t.me/CyberSec_tg", "", "", "", "telegram", ""],
+  ["t.me/CyberSec_TR", "", "Türkçe kanal", "Turkish channel", "telegram", ""],
+  ["t.me/SiberEgitimler", "", "Türkçe kanal", "Turkish channel", "telegram", ""],
+  ["t.me/CyberShieldAr", "", "", "", "telegram", ""],
+  ["t.me/RedBlueTM", "", "", "", "telegram", ""],
+  ["t.me/HackTheBox_Training", "", "", "", "telegram", ""],
+  ["t.me/noobhackersyoutube", "", "", "", "telegram", ""],
+  ["t.me/linux_read", "", "", "", "telegram", ""],
+  ["t.me/bash_help", "", "", "", "telegram", ""],
+  ["t.me/offenciveSec", "", "", "", "telegram", ""],
+  ["t.me/xakep_ru", "", "", "", "telegram", ""],
+  ["t.me/it_secur", "", "", "", "telegram", ""],
+  ["t.me/true_secator", "", "", "", "telegram", ""],
+  ["t.me/elliot_cybersec", "", "", "", "telegram", ""],
+  ["t.me/hack_less", "", "", "", "telegram", ""],
+  ["t.me/osint_pythons", "", "", "", "telegram", ""],
+  ["t.me/lab_hack", "", "", "", "telegram", ""],
+  ["t.me/infosec_globe", "", "", "", "telegram", ""],
+  ["t.me/endermanch", "", "", "", "telegram", ""],
+  ["t.me/cveNotify", "", "", "", "telegram", ""],
+  ["t.me/cristallineforum", "", "", "", "telegram", ""],
+  ["t.me/programming_guide", "", "", "", "telegram", ""],
+  ["t.me/CyberSecurityTechnologies", "", "", "", "telegram", ""],
+  ["t.me/github_repos", "", "", "", "telegram", ""],
+  ["t.me/linuxkalii", "", "", "", "telegram", ""],
+  ["t.me/secmedia", "", "", "", "telegram", ""],
+  ["t.me/Professor_Technology", "", "", "", "telegram", ""],
+  ["t.me/zpentestalliance", "", "", "", "telegram", ""],
+  ["t.me/Cognitive_Security", "", "", "", "telegram", ""],
+  ["t.me/Wireless_Cybersecurity", "", "", "", "telegram", ""],
+  ["t.me/CVEDetector", "", "", "", "telegram", ""],
+  ["t.me/brutsecurity", "", "", "", "telegram", ""],
+  ["t.me/NewsDLM", "", "", "", "telegram", ""],
+  ["t.me/GithubRedTeam", "", "", "", "telegram", ""],
+  ["t.me/citsecurity", "", "", "", "telegram", ""],
+  ["t.me/ShellSec", "", "", "", "telegram", ""],
+  ["t.me/ZeroDayDiscussion", "", "", "", "telegram", ""],
+  ["t.me/nsis_cybersec", "", "", "", "telegram", ""],
+  ["t.me/infosec_work", "", "", "", "telegram", ""],
+  ["t.me/thebugbountyhunter", "", "", "", "telegram", ""],
+  ["t.me/a7madn1", "", "", "", "telegram", ""],
+  ["t.me/book_academ", "", "", "", "telegram", ""],
+  ["t.me/library_Sec", "", "", "", "telegram", ""],
+  ["t.me/Techlibrary_Ebooks", "", "", "", "telegram", ""],
+  ["t.me/zer0day1ab", "", "", "", "telegram", ""],
+  ["t.me/hackertoys", "", "", "", "telegram", ""],
+  ["t.me/Pwn3rzs", "", "", "", "telegram", ""],
+  ["t.me/netsvault", "", "", "", "telegram", ""],
+  ["t.me/dark_drg", "", "", "", "telegram", ""],
+  ["t.me/officer_cia", "", "", "", "telegram", ""],
+  ["t.me/proxy_bar", "", "", "", "telegram", ""],
+  ["t.me/learningnets", "", "", "", "telegram", ""],
+  ["t.me/CCNA_CCNP_HUAWEI", "", "", "", "telegram", ""],
+  ["blackbird-osint.herokuapp.com", "", "Kullanıcı adı OSINT’i", "Username OSINT", "osint", ""],
+  ["accountanalysis.app", "", "Hesap analizi", "Account analysis", "osint", ""],
+  ["truthnest.com", "", "Sosyal medya analizi", "Social media analysis", "osint", ""],
+  ["social-searcher.com", "", "Sosyal medya arama", "Social media search", "osint", ""],
+  ["leakcheck.io", "", "Sızıntı kontrolü", "Breach check", "cti,osint", ""],
+  ["leak-lookup.com", "", "Sızıntı arama", "Breach lookup", "cti,osint", ""],
+  ["breachdetective.com", "", "Sızıntı kontrolü", "Breach check", "cti,osint", ""],
+  ["intelrepository.com", "", "", "", "cti,osint", ""],
+  ["shhgit.com", "", "GitHub sır taraması", "GitHub secret scanning", "cti", ""],
+  ["capesandbox.com", "", "CAPE sandbox’ı", "CAPE sandbox", "malware/sandbox", ""],
+  ["lolbas-project.github.io", "", "LOLBAS listesi", "LOLBAS list", "malware/shell", ""],
+  ["offsec.tools", "", "Offsec araç arama", "Offsec tool search", "malware/shell", ""],
+  ["dnspy.io", "", "dnSpy .NET aracı", "dnSpy .NET tool", "malware/re", ""],
+  ["njal.la", "", "Gizlilik odaklı hosting", "Privacy-focused hosting", "vds", ""],
+  ["shinjiru.com", "", "Hosting sağlayıcısı", "Hosting provider", "vds", ""],
+  ["alexhost.com", "", "Hosting sağlayıcısı", "Hosting provider", "vds", ""],
+  ["bitlaunch.io", "", "Kripto ile VPS", "VPS with crypto", "vds", ""],
+  ["orangewebsite.com", "", "İzlanda hosting’i", "Iceland hosting", "vds", ""],
+  ["hammervm.com", "", "VPS sağlayıcısı", "VPS provider", "vds", ""],
+  ["crazyrdp.sh", "", "Gizlilik VDS’i", "Privacy VDS", "vds", ""],
+  ["hetzner.com", "", "Kaliteli VDS", "High-quality VDS", "vds", ""],
+  ["cockbox.org", "", "VPS sağlayıcısı", "VPS provider", "vds", ""],
+  ["kagi.com", "", "Reklamsız arama", "Ad-free search", "search", ""],
+  ["yacy.net", "", "Merkeziyetsiz arama", "Decentralized search", "search", "yesil"],
+  ["perplexity.ai", "", "Yapay zekâ arama", "AI search", "search", ""],
+  ["privacytools.io", "", "Gizlilik araçları", "Privacy tools", "privacy,index", ""],
+  ["reddit.com/r/selfhosted/wiki", "", "Self-hosted wiki’si", "Self-hosted wiki", "index", ""],
+  ["digdeeper.club", "", "", "", "index", ""],
+  ["open-slum.org", "", "", "", "index", ""],
+  /* ── links.js ile eşitlenen eksik linkler ── */
+  ["urlhaus.abuse.ch", "", "Zararlı URL listesi", "Malicious URL feed", "malware/ioc,cti,link", ""],
+  ["feodotracker.abuse.ch", "", "Botnet C2 listesi", "Botnet C2 tracker", "malware/ioc,cti", ""],
+  ["sslbl.abuse.ch", "", "Kötü SSL sertifikaları", "Bad SSL certificates", "malware/ioc,cti", ""],
+  ["yaraify.abuse.ch", "", "YARA ile tarama", "YARA scanning", "malware/ioc,cti", ""],
+  ["any.run", "", "İnteraktif sandbox", "Interactive sandbox", "malware/sandbox,cti", ""],
+  ["hybrid-analysis.com", "", "Ücretsiz sandbox", "Free sandbox", "malware/sandbox,cti", ""],
+  ["joesandbox.com", "", "Detaylı sandbox", "Deep sandbox", "malware/sandbox,cti", ""],
+  ["malware-traffic-analysis.net", "", "Ağ trafiği vakaları", "PCAP case studies", "malware/sandbox", ""],
+  ["github.com/mandiant/capa", "", "Yetenek tespiti", "Capability detection", "malware/re", "mor"],
+  ["github.com/mandiant/flare-floss", "", "Gizli string çıkarma", "Hidden string extraction", "malware/re", ""],
+  ["github.com/horsicq/Detect-It-Easy", "", "Paketleyici tespiti", "Packer detection", "malware/re", ""],
+  ["github.com/kevoreilly/CAPEv2", "", "Zararlı config çıkarır", "Malware config extractor", "malware/sandbox", "mor"],
+  ["github.com/volatilityfoundation/volatility3", "", "Bellek analizi", "Memory forensics", "malware/sandbox", "mor"],
+  ["github.com/WithSecureLabs/chainsaw", "", "Windows log avı", "Windows log hunting", "malware/sandbox", ""],
+  ["github.com/Yamato-Security/hayabusa", "", "Olay günlüğü avı", "Event log hunting", "malware/sandbox", "mor"],
+  ["docs.velociraptor.app", "", "Uç nokta adli bilişim", "Endpoint forensics", "malware/sandbox", ""],
+  ["github.com/DidierStevens/DidierStevensSuite", "", "PDF/Office analizi", "PDF/Office analysis", "malware/sandbox", ""],
+  ["github.com/zeek/zeek", "", "Ağ izleme", "Network monitoring", "malware/sandbox", ""],
+  ["suricata.io", "", "IDS/IPS motoru", "IDS/IPS engine", "malware/sandbox", ""],
+  ["arkime.com", "", "Paket yakalama", "Packet capture", "malware/sandbox", ""],
+  ["cisa.gov/known-exploited-vulnerabilities-catalog", "", "Sömürülen açıklar listesi", "Exploited vulns list", "cti", ""],
+  ["first.org/epss", "", "Sömürülme olasılığı", "Exploit probability", "cti", ""],
+  ["nvd.nist.gov", "", "Ulusal zafiyet DB", "National vuln database", "cti", ""],
+  ["cve.org", "", "CVE kayıtları", "CVE records", "cti", ""],
+  ["osv.dev", "", "Açık kaynak zafiyetler", "Open-source vulns", "cti", ""],
+  ["exploit-db.com", "", "Exploit arşivi", "Exploit archive", "cti", ""],
+  ["packetstormsecurity.com", "", "", "", "cti", ""],
+  ["github.com/advisories", "", "", "", "cti", ""],
+  ["shadowserver.org", "", "", "", "cti", ""],
+  ["cwe.mitre.org", "", "", "", "cti", ""],
+  ["phishtank.org", "", "Oltalama URL DB", "Phishing URL database", "cti,link", ""],
+  ["openphish.com", "", "", "", "cti,link", ""],
+  ["phishstats.info", "", "Oltalama beslemesi", "Phishing feed", "cti", ""],
+  ["otx.alienvault.com", "", "Topluluk tehdit verisi", "Community threat intel", "cti", ""],
+  ["maltiverse.com", "", "", "", "cti", ""],
+  ["ransomware.live", "", "Fidye yazılımı takibi", "Ransomware tracker", "cti,leak", ""],
+  ["ransomlook.io", "", "Fidye grubu takibi", "Ransom group tracker", "cti,leak", ""],
+  ["github.com/montysecurity/C2-Tracker", "", "C2 sunucu listesi", "C2 server list", "cti", ""],
+  ["malpedia.caad.fkie.fraunhofer.de/actors", "", "", "", "cti", ""],
+  ["attack.mitre.org/groups", "", "", "", "cti", ""],
+  ["github.com/BrewedIntel/apt-resources", "", "", "", "cti", ""],
+  ["github.com/SigmaHQ/sigma", "", "", "", "cti", ""],
+  ["github.com/Yara-Rules/rules", "", "", "", "cti", ""],
+  ["malapi.io", "", "", "", "cti", ""],
+  ["unprotect.it", "", "", "", "cti", ""],
+  ["opencti.io", "", "CTI platformu", "CTI platform", "cti", ""],
+  ["misp-project.org", "", "Tehdit paylaşım platformu", "Threat sharing platform", "cti", ""],
+  ["thehive-project.org", "", "", "", "cti", ""],
+  ["github.com/intelowlproject/IntelOwl", "", "", "", "cti", ""],
+  ["github.com/smicallef/spiderfoot", "", "OSINT otomasyonu", "OSINT automation", "cti", ""],
+  ["github.com/laramies/theHarvester", "", "E-posta/alan adı keşfi", "Email/domain recon", "cti", ""],
+  ["usom.gov.tr", "", "Ulusal siber olay merkezi", "Turkey national CERT", "cti,tr", ""],
+  ["siberkapan.org", "", "", "", "cti,tr", ""],
+  ["sip.usom.gov.tr", "", "Ulusal siber olay merkezi", "Turkey national CERT", "cti,tr", ""],
+  ["rapiddns.io", "", "", "", "cti", ""],
+  ["bgp.tools", "", "", "", "cti", ""],
+  ["haveibeenpwned.com", "", "Sızıntıda mıyım?", "Was I breached?", "cti,leak", ""],
+  ["databreaches.net", "", "", "", "cti,leak", ""],
+  ["ahmia.fi", "", "Tor arama motoru", "Tor search engine", "cti", ""],
+  ["github.com/joshhighet/ransomwatch", "", "Fidye sitesi izleyici", "Leak-site monitor", "leak", ""],
+  ["x.com/DarkWebInformer", "Dark Web Informer", "Günlük sızıntı haberleri", "Daily leak news", "leak,cti", ""],
+  ["haveibeensold.app", "", "Veri satışında mıyım?", "Am I in sold data?", "leak", ""],
+  ["cavalier.hudsonrock.com", "Hudson Rock Cavalier", "Infostealer sızıntı sorgusu", "Infostealer leak lookup", "leak,cti", ""],
+  ["web.archive.org", "Wayback Machine", "Sayfa arşivi", "Page archive", "link", ""],
+  ["unshorten.me", "", "Kısa linki aç", "Expand short links", "link", ""],
+  ["wheregoes.com", "", "Yönlendirme zinciri", "Redirect tracer", "link", ""],
+  ["bellingcat.gitbook.io/toolkit", "", "", "", "index", ""],
+  ["inteltechniques.com/tools", "", "OSINT araçları", "OSINT tools", "index", ""],
+  ["start.me/p/L1rCVZ/osint-tools", "", "", "", "index", ""],
+  ["tracelabs.org", "", "", "", "index", ""],
+  ["osintcombine.com", "", "", "", "index", ""],
+  ["github.com/fastfire/deepdarkCTI", "", "", "", "index,leak", ""],
+  ["mail.tm", "", "Geçici e-posta", "Disposable email", "mail", "yesil"],
+  ["maildrop.cc", "", "Hesapsız geçici posta", "No-signup inbox", "mail", "yesil"],
+  ["addy.io", "", "E-posta takma adları", "Email aliases", "mail", "yesil"],
+  ["relay.firefox.com", "Firefox Relay", "Firefox e-posta maskesi", "Firefox email masks", "mail", "yesil"],
+  ["mail-tester.com", "", "E-posta spam testi", "Email spam test", "mail", "yesil"],
+  ["siberguvenlik.gov.tr/zararli-baglantilar", "", "Zararlı bağlantı bildir", "Report malicious links", "tr", ""],
+  ["siberguvenlik.gov.tr/guvenlik-bildirimleri", "", "Güvenlik bildirimleri", "Security advisories", "tr", ""],
+  ["kvkk.gov.tr/veri-ihlali-bildirimi", "", "Veri ihlali bildirimi", "Data breach notice", "tr", ""],
+  ["kap.org.tr", "", "Kamuyu Aydınlatma Platformu", "Public disclosure platform", "tr", ""],
+  ["bleepingcomputer.com", "", "", "", "blog", ""],
+  ["krebsonsecurity.com", "", "", "", "blog", ""],
+  ["therecord.media", "", "", "", "blog", ""],
+  ["cyberscoop.com", "", "", "", "blog", ""],
+  ["isc.sans.edu", "", "", "", "blog", ""],
+  ["helpnetsecurity.com", "", "", "", "blog", ""],
+  ["tgstat.com", "", "Kanal istatistikleri", "Channel analytics", "tgk", ""],
+  ["telemetr.io", "", "Telegram analitiği", "Telegram analytics", "tgk", ""],
+  ["tganaliz.com/tr", "", "Türkçe Telegram analizi", "Turkish Telegram analytics", "tgk", ""],
+  ["codeby.net", "", "Rus güvenlik topluluğu", "Russian infosec community", "forum", ""],
+  ["r10.net", "", "Türk webmaster forumu", "Turkish webmaster forum", "forum", ""]
+];
+
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm=s=>String(s).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/ı/g,"i");
+const TGI='<svg class="tgi" aria-hidden="true"><use href="#tg"/></svg>';
+let L;try{L=localStorage.getItem("lg")}catch(e){}
+L=L||(/^tr/i.test(navigator.language)?"tr":"en");
+const T=k=>(I18N[L]&&I18N[L][k])||I18N.tr[k]||k;
+const pick=o=>typeof o==="string"?o:(o&&(o[L]||o.tr))||"";
+
+const CAT={};CATEGORIES.forEach(c=>CAT[c.id]=c);
+const COL={sari:['<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l2 4.3 4.7.5-3.5 3.2 1 4.6L8 11.7 3.8 14l1-4.6L1.3 6.3 6 5.8z"/></svg>',"#d6b25e"],kirmizi:['<svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.8L15 14H1L8 1.8zM7.2 6.4v3.7h1.6V6.4H7.2zm0 4.8v1.5h1.6v-1.5H7.2z"/></svg>',"#e5646f"],mor:['<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l6 6.5-6 6.5L2 8z"/></svg>',"#a78bfa"],yesil:['<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="4.2"/></svg>',"#4fd1a1"]};
+const PRI=["kirmizi","sari","mor","yesil"],LEGO=["sari","kirmizi","mor","yesil"];
+const ITEMS=[];
+LINKS.forEach(([u,label,dtr,den,cs,co])=>{
+  const url=/^https?:/.test(u)?u:"https://"+u,tg=/^https?:\/\/t\.me\//.test(url);
+  const lb=label||(tg?url.replace(/\/$/,"").split("/").pop():url.replace(/^https?:\/\//,"").replace(/\/$/,""));
+  const cats=(cs||"").split(",").filter(Boolean).map(x=>{const p=x.split("/");return{c:p[0],s:p[1]}});
+  const cols=(co||"").split(",").filter(Boolean);
+  ITEMS.push({url,label:lb,tg,cats,cols,fav:cols.includes("sari"),d:{tr:dtr||"",en:den||dtr||""},
+    hay:norm([lb,url,dtr,den,cats.map(x=>CAT[x.c]?CAT[x.c].name.tr+" "+CAT[x.c].name.en:"").join(" ")].join(" "))});
+});
+let key=(()=>{let k=null;try{k=new URLSearchParams(location.search).get("k")}catch(e){}return CAT[k]?k:null})();
+const EDIT=/[?&](duzenle|edit)(=|&|$)/.test(location.search);if(EDIT)document.body.classList.add("edit");
+let words=[],col=null,uid=0,onlyMiss=false;
+const hasD=i=>!!(i.d.tr||i.d.en),eb=$("#eb");
+const res=$("#res"),cb=$("#cats"),inp=$("#q"),leg=$("#leg"),tabs=[];
+const inCat=(i,id)=>i.cats.some(x=>x.c===id);
+const favFirst=a=>a.filter(i=>i.fav).concat(a.filter(i=>!i.fav));
+const match=i=>(!col||i.cols.includes(col))&&(!onlyMiss||!hasD(i))&&words.every(w=>i.hay.includes(w));
+function row(i,showCats){
+  const id="t"+(++uid),real=pick(i.d),d=real||T(i.tg?"gw.tgd":"gw.gen"),st=PRI.find(c=>i.cols.includes(c));
+  const mk=PRI.filter(c=>i.cols.includes(c)).map(c=>'<i class="mk" style="--c:'+COL[c][1]+'" role="img" aria-label="'+esc(T("gw.l."+c))+'">'+COL[c][0]+'</i>').join("");
+  return '<div class="it'+(EDIT&&!real?" miss":"")+'"'+(st?' style="--c:'+COL[st][1]+'"':"")+'><a href="'+esc(i.url)+'" target="_blank" rel="noopener"><b>'+(i.tg?TGI:"")+esc(i.label)+mk+'</b>'+
+    (showCats?'<small>'+esc(i.cats.map(x=>CAT[x.c]?pick(CAT[x.c].name):x.c).join(" · "))+'</small>':"")+'</a>'+
+    (real||!EDIT?'<button type="button" class="ib" aria-label="'+esc(T("gw.info"))+'" aria-expanded="false" aria-describedby="'+id+'">!</button><span class="tip" role="tooltip" id="'+id+'">'+esc(d)+'</span>':(EDIT?'<button type="button" class="ib" aria-label="Açıklama eksik" aria-expanded="false" aria-describedby="'+id+'">!</button><span class="tip" role="tooltip" id="'+id+'">Açıklama eksik · dizideki satırın 3. (TR) ve 4. (EN) alanını doldur</span>':""))+'</div>';
+}
+const grid=a=>'<div class="rg">'+a.map(i=>row(i,0)).join("")+'</div>';
+const addTile=(k,s)=>EDIT?'<button type="button" class="add" data-k="'+k+'" data-s="'+s+'">+ link ekle</button>':"";
+function renderEB(){
+  if(!EDIT)return;const m=ITEMS.filter(i=>!hasD(i)).length;eb.hidden=false;
+  eb.innerHTML='<b>Düzenleme modu</b><span>'+m+' açıklama eksik</span><button type="button" class="lg" id="ebm" aria-pressed="'+onlyMiss+'">Eksikleri göster</button><button type="button" class="lg" id="ebc">+ yeni kategori satırı</button>';
+}
+function render(){
+  let h="",n=0;renderEB();
+  const LIVE=["sari"]; /* tıklanabilir etiketler; diğerleri yalnızca anahtar olarak durur */
+  leg.innerHTML=LEGO.map(k=>LIVE.includes(k)
+    ?'<button type="button" class="lg" style="--c:'+COL[k][1]+'" data-c="'+k+'" title="'+esc(T("gw.l."+k))+'" aria-pressed="'+(col===k)+'"><i>'+COL[k][0]+'</i>'+esc(T("gw.s."+k))+'</button>'
+    :'<span class="lg frz" style="--c:'+COL[k][1]+'" title="'+esc(T("gw.l."+k))+'"><i>'+COL[k][0]+'</i>'+esc(T("gw.s."+k))+'</span>').join("");
+  if(words.length||((col||onlyMiss)&&!key)){
+    const m=favFirst(ITEMS.filter(match));n=m.length;
+    h='<p class="cnt">'+n+' '+esc(T("gw.res"))+'</p>'+(n?'<div class="rg">'+m.map(i=>row(i,1)).join("")+'</div>':'<div class="none">'+esc(T("gw.none"))+'</div>');
+  }else if(key){
+    const c=CAT[key],m=ITEMS.filter(i=>inCat(i,key)&&match(i));n=m.length;
+    h='<button type="button" class="bk"><span aria-hidden="true">←</span> '+esc(T("gw.all"))+'</button><h3 class="ct">'+esc(pick(c.name))+' <i>'+n+'</i></h3><p class="cd">'+esc(pick(c.desc))+'</p>';
+    if(!n)h+='<div class="none">'+esc(T("gw.none"))+'</div>'+addTile(key,"");
+    else if(c.subs){
+      c.subs.concat([{id:"",name:{tr:"Diğer",en:"Other"}}]).forEach(s=>{
+        const g=favFirst(m.filter(i=>i.cats.some(x=>x.c===key&&(s.id?x.s===s.id:!x.s||!c.subs.some(y=>y.id===x.s)))));
+        if(g.length||EDIT)h+='<div class="grp"><h4>'+esc(pick(s.name))+' <i>'+g.length+'</i></h4>'+(g.length?grid(g):"")+addTile(key,s.id)+'</div>';
+      });
+    }else h+=grid(favFirst(m))+addTile(key,"");
+  }else{
+    n=ITEMS.length;
+    h='<div class="cg">'+CATEGORIES.map(c=>'<a class="cc" href="?k='+c.id+'" data-k="'+c.id+'"><h3>'+esc(pick(c.name))+'</h3><span class="n">'+ITEMS.filter(i=>inCat(i,c.id)).length+' '+esc(T("gw.links"))+'</span><p>'+esc(pick(c.desc))+'</p></a>').join("")+'</div>';
+  }
+  res.innerHTML=h;$("#sV").textContent=n;
+}
+function openCat(k,push){
+  key=k&&CAT[k]?k:null;
+  if(push){try{{const u=new URLSearchParams(location.search);key?u.set("k",key):u.delete("k");const q=u.toString();history.pushState({k:key},"",q?"?"+q:location.pathname)}}catch(e){}}
+  tabs.forEach(b=>b.setAttribute("aria-pressed",b._c.id===(key||"all")));
+  render();
+  if(push){try{$(".pbar").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}catch(e){}}
+}
+[{id:"all",name:{tr:"Kategoriler",en:"Categories"}}].concat(CATEGORIES).forEach(c=>{
+  const b=document.createElement("button");b.type="button";b._c=c;
+  b.setAttribute("aria-pressed",c.id===(key||"all"));
+  b.onclick=()=>openCat(c.id==="all"?null:c.id,true);
+  cb.appendChild(b);tabs.push(b);
+});
+$("#sN").textContent=ITEMS.length;$("#sC").textContent=CATEGORIES.length;
+inp.addEventListener("input",()=>{words=norm(inp.value).split(/\s+/).filter(Boolean);render()});
+leg.addEventListener("click",e=>{const b=e.target.closest(".lg");if(!b||!b.dataset.c)return;col=col===b.dataset.c?null:b.dataset.c;render()});
+function closeTips(except){$$(".it.open").forEach(it=>{if(except&&it===except.parentNode)return;it.classList.remove("open");it.querySelector(".ib").setAttribute("aria-expanded","false")})}
+function fb(t){const a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove()}
+function copyTxt(t){try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(()=>fb(t));return}}catch(e){}fb(t)}
+function flash(b,msg){const o=b.textContent;b.textContent=msg;setTimeout(()=>{b.textContent=o},1800)}
+function placeTip(it){const t=it.querySelector(".tip");if(!t)return;
+  requestAnimationFrame(()=>{if(getComputedStyle(t).display==="none")return;
+    t.classList.remove("up");t.style.left="";t.style.right="";
+    const r=t.getBoundingClientRect(),ir=it.getBoundingClientRect();
+    if(r.bottom>innerHeight-8&&ir.top>r.height+12)t.classList.add("up");
+    const r2=t.getBoundingClientRect();if(r2.left<8){t.style.right="auto";t.style.left="0"}
+  })}
+res.addEventListener("mouseover",e=>{const it=e.target.closest(".it");if(it)placeTip(it)});
+res.addEventListener("focusin",e=>{const it=e.target.closest(".it");if(it)placeTip(it)});
+eb.addEventListener("click",e=>{
+  if(e.target.closest("#ebm")){onlyMiss=!onlyMiss;render();return}
+  const c=e.target.closest("#ebc");if(c){copyTxt('{"id":"yeni-kategori","name":{"tr":"","en":""},"desc":{"tr":"","en":""}},');flash(c,"✓ kopyalandı — CATEGORIES içine yapıştır")}
+});
+res.addEventListener("click",e=>{
+  const ad=e.target.closest(".add");if(ad){copyTxt('["","","","","'+ad.dataset.k+(ad.dataset.s?"/"+ad.dataset.s:"")+'",""],');flash(ad,"✓ kopyalandı — LINKS içine yapıştır");return}
+  if(e.target.closest(".bk")){openCat(null,true);return}
+  const cc=e.target.closest("a.cc");if(cc){e.preventDefault();openCat(cc.dataset.k,true);return}
+  const b=e.target.closest(".ib");closeTips(b);
+  if(b){const it=b.parentNode,o=!it.classList.contains("open");it.classList.toggle("open",o);b.setAttribute("aria-expanded",String(o));if(o)placeTip(it)}
+});
+document.addEventListener("click",e=>{if(!e.target.closest(".it"))closeTips()});
+addEventListener("keydown",e=>{if(e.key==="Escape"){const o=$(".it.open");if(o){const b=o.querySelector(".ib");closeTips();b.focus()}}});
+addEventListener("popstate",()=>{let k=null;try{k=new URLSearchParams(location.search).get("k")}catch(e){}openCat(k,false)});
+
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* menüde “yakında” — index.html’deki SOON ile aynı tut */
+const SOON=[];
+function navSoon(){$$("nav a[data-nav]").forEach(a=>{
+  if(SOON.includes(a.dataset.nav)){
+    if(a.hasAttribute("href")){a.dataset.href=a.getAttribute("href");a.removeAttribute("href")}
+    a.classList.add("soon");a.setAttribute("aria-disabled","true");a.dataset.soon=T("soon");
+  }else{
+    if(!a.hasAttribute("href")&&a.dataset.href)a.setAttribute("href",a.dataset.href);
+    a.classList.remove("soon");a.removeAttribute("aria-disabled");a.removeAttribute("data-soon");
+  }});}
+
+/* ── arama örnekleri (dönen placeholder) + yukarı çık ── */
+const PH={tr:["nmap, shodan, sandbox…","Tor, VPN, şifreli mesajlaşma…","tria.ge, ghidra, yara…","OSINT, kullanıcı adı arama…","CTI, tehdit istihbaratı…","Linux, Arch, pentest…"],en:["nmap, shodan, sandbox…","Tor, VPN, encrypted messaging…","tria.ge, ghidra, yara…","OSINT, username search…","CTI, threat intelligence…","Linux, Arch, pentest…"]};
+let pi=0,pt=null;
+const up=document.createElement("button");up.type="button";up.className="up";up.hidden=true;up.textContent="↑";document.body.appendChild(up);
+function phSet(){const a=PH[L]||PH.tr;inp.placeholder=T("gw.ph")+" "+a[pi%a.length];up.setAttribute("aria-label",T("gw.up"))}
+function phLoop(){clearInterval(pt);if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  pt=setInterval(()=>{if(document.activeElement===inp||inp.value)return;inp.classList.add("po");setTimeout(()=>{pi++;phSet();inp.classList.remove("po")},300)},2800)}
+addEventListener("scroll",()=>{up.hidden=(window.scrollY||0)<600},{passive:true});
+up.onclick=()=>{try{$(".pbar").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}catch(e){scrollTo(0,0)}};
+phLoop();
+
+/* dil */
+const clk=$("#clk"),tick=()=>{clk.textContent=new Date().toLocaleTimeString(L==="en"?"en-GB":"tr-TR")};
+function applyLang(){
+  document.documentElement.lang=L;
+  $$("[data-i18n]").forEach(e=>{e.textContent=T(e.dataset.i18n)});
+  $$("[data-i18n-ph]").forEach(e=>{const v=T(e.dataset.i18nPh);e.placeholder=v;e.setAttribute("aria-label",v)});
+  $$("[data-i18n-aria]").forEach(e=>e.setAttribute("aria-label",T(e.dataset.i18nAria)));
+  $("#lang").textContent=L==="en"?"TR":"EN";
+  tabs.forEach(b=>{b.textContent=pick(b._c.name)});
+  navSoon();render();tick();phSet();
+}
+$("#lang").onclick=()=>{L=L==="en"?"tr":"en";try{localStorage.setItem("lg",L)}catch(e){}applyLang()};
+setInterval(tick,1000);
+try{$("#y").textContent=new Date().getFullYear()}catch(e){}
+applyLang();
+
+/* gateway overlay */
+const ov=$("#ov"),ot=$("#ovt"),go=$("#go"),gate=$("#gate");let tm=[];
+const setInert=v=>$$("header,main,footer").forEach(e=>{e.inert=v});
+function closeOv(){setInert(false);ov.hidden=true;go.hidden=true;tm.forEach(clearTimeout);tm=[];document.body.style.overflow="";gate.focus()}
+gate.onclick=()=>{
+  const Ls=['<span class="p">$</span> gateway --target faydalikaynak',T("ov.1"),T("ov.2"),'<span class="g">'+T("ov.3")+'</span>'];
+  ov.hidden=false;setInert(true);go.hidden=true;ot.innerHTML="";document.body.style.overflow="hidden";
+  Ls.forEach((l,i)=>tm.push(setTimeout(()=>{ot.innerHTML=Ls.slice(0,i+1).join("\n");if(i===Ls.length-1){go.hidden=false;go.focus()}},reduce?0:i*550)));
+};
+$("#cl").onclick=closeOv;
+ov.addEventListener("click",e=>{if(e.target===ov)closeOv()});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!ov.hidden)closeOv()});
+})();
+</script>
+<div class="dsc" id="disc" role="dialog" aria-modal="true" aria-labelledby="discT">
+  <div class="box" tabindex="-1">
+    <span class="grab" aria-hidden="true"></span>
+    <div class="dh">
+      <span class="dic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+      <div><div class="dk"><span class="t-tr">Sorumluluk reddi</span><span class="t-en">Disclaimer</span></div><div class="dt" id="discT" role="heading" aria-level="2"><span class="t-tr">Kısa bir uyarı</span><span class="t-en">A quick notice</span></div></div>
+      <button type="button" class="lg" id="discL" aria-label="Change language">EN</button>
+    </div>
+    <ul class="dl">
+      <li><span class="t-tr"><b>Bağlantım yok.</b> Burada paylaşılan sitelerin ve araçların hiçbiriyle ilgim yok; hepsi yalnızca bilgilendirme amaçlıdır.</span><span class="t-en"><b>No affiliation.</b> I have no ties to any site or tool listed here; everything is shared for information only.</span></li>
+      <li><span class="t-tr"><b>Dikkatli ol.</b> CTI, malware analizi ve tersine mühendislikle ilgilendiğim için bazı kaynaklar canlı zararlı örnekleri ya da exploit kodu içerebilir; izole bir sanal makinede çalış.</span><span class="t-en"><b>Be careful.</b> As I work on CTI, malware analysis and reverse engineering, some resources may contain live malware samples or exploit code; use an isolated virtual machine.</span></li>
+      <li><span class="t-tr"><b>Sorumluluk sende.</b> Bu bağlantılardan doğabilecek hiçbir zarardan sorumlu değilim; kaynakları yasal ve etik sınırlar içinde kullan.</span><span class="t-en"><b>Your responsibility.</b> I'm not liable for any harm arising from these links; use them within legal and ethical limits.</span></li>
+    </ul>
+    <button type="button" class="dok" id="discOk"><span class="t-tr">Kabul ediyorum</span><span class="t-en">I accept</span></button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY="alem_disc_v1",d=document.getElementById("disc");if(!d)return;
+  var ok=document.getElementById("discOk"),lb=document.getElementById("discL"),op=document.getElementById("discOpen"),root=document.documentElement;
+  var bg=[].slice.call(document.querySelectorAll("header,main,footer,canvas,.spot"));
+  function lang(){return root.lang==="en"?"TR":"EN"}
+  function lock(on){bg.forEach(function(e){on?e.setAttribute("inert",""):e.removeAttribute("inert")});document.body.style.overflow=on?"hidden":""}
+  function show(){root.classList.remove("dseen");lock(true);d.querySelector(".box").focus({preventScroll:true})}
+  function hide(){root.classList.add("dseen");lock(false);try{sessionStorage.setItem(KEY,"1")}catch(e){}if(op)op.focus()}
+  ok.addEventListener("click",hide);
+  lb.addEventListener("click",function(){var b=document.getElementById("lang");if(b)b.click();lb.textContent=lang()});
+  if(op)op.addEventListener("click",function(e){e.preventDefault();show()});
+  d.addEventListener("keydown",function(e){
+    if(e.key!=="Tab")return;
+    var f=[].slice.call(d.querySelectorAll("button,a[href]")).filter(function(x){return x.offsetParent!==null});
+    if(!f.length)return;var a=f[0],z=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
+    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
+  });
+  lb.textContent=lang();
+  if(!root.classList.contains("dseen"))show();
+})();
+</script>
+</body>
+</html>
