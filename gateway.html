@@ -23,7 +23,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);lin
    radial-gradient(60% 40% at 80% 0%,rgba(46,168,255,.14),transparent 70%);}
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:0;padding-top:env(safe-area-inset-top,0px);z-index:5;background:rgba(5,11,23,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav{display:flex;align-items:center;justify-content:space-between;height:56px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;letter-spacing:.3px}
@@ -119,7 +118,6 @@ button,.btn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .res b{display:flex;align-items:center;gap:7px}.res .tgi{width:14px;height:14px}.res a:hover .tgi{fill:#8ec5ee}
 @keyframes fl{50%{transform:translateY(-12px)}}
 @media(max-width:720px){
-.wrap{padding:0 16px}.hero{padding:36px 0}section{padding:36px 0}h2{font-size:1.4rem;flex-wrap:wrap}
 .side{padding:14px}.pmain{padding:14px}.pbar{flex-wrap:wrap}
 .cats{flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:0 -14px;padding:0 14px 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .cats::-webkit-scrollbar{display:none}
@@ -306,52 +304,88 @@ section{padding:28px 0}.sub{font-size:.92rem}
 .it .ib{width:38px;height:38px;margin:0 8px 0 0}
 }
 
-/* ── v15: giriş uyarısı — şeffaf cam, altın çerçeve, hafif hareket ── */
-html[lang="en"] .t-tr{display:none}html:not([lang="en"]) .t-en{display:none}
-@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
-.dsc{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:18px;-webkit-tap-highlight-color:transparent}
-.dsc::before{content:"";position:absolute;inset:0;background:rgba(3,8,18,.10);-webkit-backdrop-filter:blur(1.2px);backdrop-filter:blur(1.2px);animation:dfade .35s ease backwards}
-html.dseen .dsc{display:none}
-.dsc .box{position:relative;z-index:1;overflow:hidden;overflow-y:auto;width:min(430px,100%);max-height:calc(100vh - 36px);max-height:calc(100dvh - 36px);padding:20px 22px;border:1px solid rgba(201,164,92,.38);border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.025) 42%,rgba(255,255,255,.06)),rgba(8,18,40,.15);-webkit-backdrop-filter:blur(11px) saturate(175%) brightness(1.06);backdrop-filter:blur(11px) saturate(175%) brightness(1.06);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 1px 0 0 rgba(255,255,255,.12),inset 0 -22px 34px rgba(120,190,255,.05),0 24px 60px rgba(0,0,0,.28),0 0 34px rgba(201,164,92,.12);text-shadow:0 1px 12px rgba(2,8,20,.75),0 0 2px rgba(2,8,20,.55);animation:dpop .5s cubic-bezier(.2,.8,.2,1) backwards}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.dsc::before{background:rgba(3,8,18,.8)}.dsc .box{background:#08142a}}
-.dsc .box::before{content:"";position:absolute;inset:-40%;pointer-events:none;background:linear-gradient(115deg,transparent 34%,rgba(255,255,255,.10) 46%,transparent 58%),radial-gradient(38% 28% at 28% 22%,rgba(120,200,255,.13),transparent 70%),radial-gradient(34% 26% at 78% 72%,rgba(201,164,92,.09),transparent 70%);animation:dwater 18s ease-in-out infinite alternate}
-.dsc .box::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:conic-gradient(from var(--a),rgba(228,196,120,0) 0 62%,rgba(228,196,120,.95) 80%,rgba(228,196,120,0) 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:dspin 7s linear infinite}
-.dsc .box>*{position:relative}
-.dsc .box:focus{outline:none}
-.dsc .grab{display:none}
-.dsc .dh{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.dsc .dic{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--gold);border:1px solid rgba(201,164,92,.45);background:rgba(201,164,92,.08);box-shadow:0 0 16px rgba(201,164,92,.22)}
-.dsc .dk{font:.68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
-.dsc .dt{margin-top:1px;font-size:1.08rem;font-weight:700;line-height:1.25;color:var(--text)}
-.dsc .dh .lg{margin-left:auto;min-height:32px;padding:3px 11px;font-size:.74rem;background:rgba(255,255,255,.05);touch-action:manipulation}
-.dsc .dl{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:10px}
-.dsc .dl li{position:relative;padding-left:16px;font-size:.88rem;line-height:1.55;color:#e6f0fb}
-.dsc .dl li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(201,164,92,.6)}
-.dsc .dl b{color:#f0dcac;font-weight:700}
-.dsc .dok{display:block;margin-left:auto;min-height:44px;padding:10px 26px;border:1px solid rgba(150,215,255,.6);border-radius:999px;background:linear-gradient(180deg,rgba(100,195,255,.42),rgba(30,130,220,.30));color:#f4faff;font:inherit;font-size:.94rem;font-weight:700;text-shadow:0 1px 8px rgba(2,10,24,.6);cursor:pointer;touch-action:manipulation;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 0 22px rgba(46,168,255,.3);transition:filter .15s,box-shadow .15s,transform .15s}
-.dsc .dok:hover,.dsc .dok:focus-visible{filter:brightness(1.12);box-shadow:0 0 28px rgba(46,168,255,.5);transform:translateY(-1px)}
-.dsc .dok:active{transform:scale(.98)}
-@keyframes dfade{from{opacity:0}}
-@keyframes dpop{from{opacity:0;transform:translateY(10px) scale(.97);filter:blur(4px)}}
-@keyframes dsheet{from{opacity:0;transform:translateY(46px)}}
-@keyframes dwater{to{transform:translate3d(7%,5%,0) rotate(9deg)}}
-@keyframes dspin{to{--a:360deg}}
-@media(prefers-reduced-motion:reduce){.dsc::before,.dsc .box,.dsc .box::before,.dsc .box::after{animation:none}.dsc .dok{transition:none}}
-/* telefon / dokunmatik: alttan açılan kart */
-@media(max-width:560px){
-.dsc{place-items:end center;padding:0}
-.dsc .box{width:100%;max-width:none;max-height:calc(100vh - 56px);max-height:calc(100dvh - 56px);padding:10px 18px calc(18px + env(safe-area-inset-bottom,0px));border-radius:22px 22px 0 0;border-bottom:0;animation:dsheet .5s cubic-bezier(.2,.8,.2,1) backwards}
-.dsc .grab{display:block;width:40px;height:4px;margin:0 auto 12px;border-radius:4px;background:rgba(255,255,255,.28)}
-.dsc .dl li{font-size:.92rem}
-.dsc .dh .lg{min-height:40px;padding:6px 14px;font-size:.78rem}
-.dsc .dok{width:100%;min-height:52px;font-size:1rem;text-align:center}
+/* ── v17: uyarı bloğu, onay penceresi, açıklama düzenleyici ── */
+.tip.ed{min-width:min(290px,80vw)}
+.tip.ed label{display:grid;grid-template-columns:24px 1fr;gap:6px;align-items:center;margin:0 0 6px;font:.7rem var(--mono);color:var(--mute)}
+.tip.ed input{min-width:0;padding:7px 8px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--text);font:.82rem var(--sans)}
+.tip.ed input:focus{outline:none;border-color:var(--blue)}
+.tip.ed .ed-cp{width:100%;min-height:36px;margin-top:2px;border:1px dashed rgba(201,164,92,.6);border-radius:6px;background:none;color:var(--gold);font:.78rem var(--mono);cursor:pointer}
+.tip.ed small{display:block;margin-top:6px;color:var(--mute);font-size:.7rem}
+.edit .it:focus-within .tip.ed{display:block}
+
+/* ── v18: giriş notu (cam, blur, parlayan yazı), yukarı oku, hafif canlılık ── */
+.gn{border:0;padding:0;background:transparent;color:var(--text);max-width:none;max-height:none;overflow:visible}
+.gn::backdrop{background:radial-gradient(70% 55% at 50% 38%,rgba(10,22,46,.5),rgba(2,5,12,.84));backdrop-filter:blur(10px) saturate(115%);-webkit-backdrop-filter:blur(10px) saturate(115%);animation:gnb .4s ease both}
+.gn-in{position:relative;width:min(440px,calc(100vw - 32px));padding:28px 28px 22px;border-radius:18px;border:1px solid rgba(160,190,230,.16);background:linear-gradient(180deg,rgba(20,38,70,.5),rgba(8,16,34,.62));backdrop-filter:blur(24px) saturate(140%);-webkit-backdrop-filter:blur(24px) saturate(140%);box-shadow:0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.07);animation:gni .55s cubic-bezier(.2,.8,.2,1) both}
+.gn-in::before{content:"";position:absolute;left:18px;right:18px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,205,255,.75),transparent);background-size:220% 100%;animation:sheen 7s ease-in-out infinite}
+.gn-grab{display:none}
+.gn-k{display:flex;align-items:center;gap:8px;margin:0 0 14px;font:600 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.gn-k i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:dotp 3.4s ease-in-out infinite}
+.gn-t{font-size:1.4rem;font-weight:650;line-height:1.25;letter-spacing:-.2px;color:#eaf4ff;text-shadow:0 0 16px rgba(76,195,255,.42),0 0 1px rgba(255,255,255,.3);animation:glow 5.5s ease-in-out infinite}
+.gn-b{margin:14px 0 0;color:#a9bdd6;font-size:.95rem;line-height:1.6}
+.gn-b2{margin:8px 0 0;color:var(--mute);font-size:.88rem;line-height:1.5}
+.gn-ok{display:block;width:100%;min-height:48px;margin-top:22px;border:1px solid rgba(76,195,255,.5);border-radius:10px;background:rgba(46,168,255,.13);color:#e3f4ff;font:600 .95rem var(--sans);text-shadow:0 0 12px rgba(76,195,255,.5);cursor:pointer;transition:background .2s,box-shadow .2s,border-color .2s}
+.gn-ok:hover{background:rgba(46,168,255,.22);border-color:rgba(120,205,255,.8);box-shadow:0 0 24px rgba(46,168,255,.28)}
+.gn-h{margin:12px 0 0;text-align:center;font:.7rem var(--mono);color:#5f7894}
+.gn-hm{display:none}
+.gn.out .gn-in{animation:gno .23s ease both}
+.gn.out::backdrop{animation:gnbo .23s ease both}
+@keyframes gnb{from{opacity:0}to{opacity:1}}
+@keyframes gnbo{to{opacity:0}}
+@keyframes gni{from{opacity:0;transform:translateY(14px) scale(.975)}to{opacity:1;transform:none}}
+@keyframes gno{to{opacity:0;transform:translateY(10px) scale(.985)}}
+@keyframes gns{from{transform:translateY(100%)}to{transform:none}}
+@keyframes glow{0%,100%{text-shadow:0 0 14px rgba(76,195,255,.34),0 0 1px rgba(255,255,255,.3)}50%{text-shadow:0 0 26px rgba(76,195,255,.62),0 0 1px rgba(255,255,255,.4)}}
+@keyframes sheen{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes dotp{0%,100%{opacity:1}50%{opacity:.4}}
+.nbtn{margin-left:10px;padding:0 10px;min-height:26px;border:1px solid var(--line);border-radius:6px;background:none;color:var(--mute);font:.72rem var(--mono);cursor:pointer;transition:color .15s,border-color .15s}
+.nbtn:hover{color:var(--gold);border-color:rgba(201,164,92,.55)}
+.dot{animation:dotp 3.4s ease-in-out infinite}
+.up{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(160,190,230,.25);background:rgba(10,20,40,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--glow);font-size:0;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.45);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s,border-color .2s,box-shadow .2s}
+.up.on{opacity:1;pointer-events:auto;transform:none}
+.up:hover{border-color:rgba(76,195,255,.6);box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 18px rgba(46,168,255,.3)}
+.up svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(1.5px)}50%{transform:translateY(-2.5px)}}
+@media(min-width:721px){.up{display:grid}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+#res.anim .cc,#res.anim .it,#res.anim .ct,#res.anim .cd,#res.anim .grp h4,#res.anim .bk{animation:rise .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--n,0)*32ms)}
+@media(hover:hover){.cc:hover{transform:translateY(-2px)}}
+@media(max-width:720px){
+.gn{margin:auto 0 0;width:100%}
+.gn-in{width:100%;border-radius:20px 20px 0 0;padding:12px 22px calc(20px + env(safe-area-inset-bottom,0px));animation:gns .5s cubic-bezier(.2,.8,.2,1) both}
+.gn.out .gn-in{animation:gno .23s ease both}
+.gn-grab{display:block;width:40px;height:4px;margin:0 auto 18px;border-radius:4px;background:rgba(255,255,255,.22)}
+.gn-hd{display:none}.gn-hm{display:inline}
+.nbtn{margin-left:auto}
 }
-@media(max-height:430px) and (orientation:landscape){.dsc .box{max-height:calc(100dvh - 16px)}.dsc{padding:8px}}
-.dnote{color:var(--mute);font-size:.82rem}
-.dnote a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+@media(prefers-reduced-motion:reduce){.dot,.up svg,.gn-t,.gn-in,.gn-in::before,.gn-k i,.gn::backdrop,#res.anim .cc,#res.anim .it,#res.anim .ct,#res.anim .cd,#res.anim .grp h4,#res.anim .bk{animation:none!important}}
+
+/* ── giriş uyarısı v2: düz, ciddi (cam/parlama/animasyon yok) ── */
+.gn::backdrop{background:rgba(2,5,12,.88);backdrop-filter:none;-webkit-backdrop-filter:none}
+.gn-in{width:min(480px,calc(100vw - 32px));padding:20px 22px 20px;border-radius:10px;border:1px solid rgba(255,255,255,.12);border-top:3px solid #e5646f;background:#0b1220;box-shadow:0 24px 70px rgba(0,0,0,.6);backdrop-filter:none;-webkit-backdrop-filter:none;animation:none}
+.gn-in::before{display:none}
+.gn-top{display:flex;align-items:center;gap:10px;margin:0 0 14px}
+.gn-ico{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:6px;background:rgba(229,100,111,.14);color:#e5646f}
+.gn-ico svg{width:16px;height:16px;fill:currentColor}
+.gn-lab{font:700 .74rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#e5646f}
+.gn-lang{margin-left:auto;display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.gn-lang button{min-width:42px;min-height:34px;padding:0 10px;border:0;background:none;color:var(--mute);font:600 .74rem var(--mono);cursor:pointer}
+.gn-lang button[aria-pressed=true]{background:rgba(201,164,92,.16);color:var(--gold)}
+.gn-t{margin:0;font-size:1.2rem;font-weight:650;line-height:1.3;letter-spacing:0;color:#f1f5fb;text-shadow:none;animation:none}
+.gn-t::before{content:none;display:none}
+.gn-b{margin:10px 0 0;color:#aebfd4;font-size:.92rem;line-height:1.55}
+.gn-l{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.gn-l li{position:relative;padding-left:16px;color:#c7d5e6;font-size:.9rem;line-height:1.5}
+.gn-l li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:1px;background:#e5646f}
+.gn-l b{color:#f1f5fb;font-weight:600}
+.gn-ok{display:block;width:100%;min-height:48px;margin-top:20px;border:1px solid rgba(229,100,111,.55);border-radius:8px;background:rgba(229,100,111,.12);color:#fff;text-shadow:none;font:600 .95rem var(--sans);cursor:pointer;transition:background .2s,border-color .2s}
+.gn-ok:hover{background:rgba(229,100,111,.2);border-color:#e5646f;box-shadow:none}
+.gn-ok:focus-visible,.gn-lang button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.gn-grab,.gn-h,.gn-k,.gn-b2{display:none}
+.nbtn::before{content:"⚠";margin-right:6px;color:#e5646f}
+@media(max-width:720px){.gn{margin:auto 0 0;width:100%}.gn-in{width:100%;border-radius:10px 10px 0 0;padding:16px 18px calc(18px + env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 20px);overflow-y:auto;animation:none}.gn-grab{display:none}}
+@media(max-width:560px){section{padding:20px 0}section>.sub{display:none}section>h2{font-size:1.35rem}.cats button{min-height:44px}.legend .lg{min-height:34px;padding:0 10px;font-size:.72rem}.nbtn{min-height:34px}}
 </style>
-<script>try{if(sessionStorage.getItem("alem_disc_v1")==="1")document.documentElement.classList.add("dseen")}catch(e){}</script>
-<noscript><style>.dsc{display:none!important}</style></noscript>
 </head>
 <body class="gwpage">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="tg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></symbol><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".3" stop-color="#F58529"/><stop offset=".55" stop-color="#DD2A7B"/><stop offset=".8" stop-color="#8134AF"/><stop offset="1" stop-color="#515BD4"/></linearGradient></defs><symbol id="xx" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol><symbol id="ig" viewBox="0 0 24 24"><rect x="2.4" y="2.4" width="19.2" height="19.2" rx="5.6" fill="none" stroke="url(#igg)" stroke-width="2.2"/><circle cx="12" cy="12" r="4.5" fill="none" stroke="url(#igg)" stroke-width="2.2"/><circle cx="17.5" cy="6.5" r="1.4" fill="url(#igg)" stroke="none"/></symbol><symbol id="gh" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol><symbol id="li" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol><symbol id="sg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="1.7 2.3"/><path d="M12 4.7a7.3 7.3 0 0 0-6.2 11.1l-1.1 3.6 3.7-1A7.3 7.3 0 1 0 12 4.7z"/></symbol></svg>
@@ -391,7 +425,7 @@ html.dseen .dsc{display:none}
 
 <footer><div class="wrap">
   <div class="soc fsoc"><a class="b-gh" href="https://github.com/alemsec" target="_blank" rel="noopener"><svg class="si" aria-hidden="true"><use href="#gh"/></svg><span><b>GitHub</b><small data-i18n="soc.gh">Kodlarım ve açık kaynak işlerim</small></span></a></div>
-  <div class="copy"><span>© <span id="y">2026</span> alemSecurity</span><span class="dnote"><span class="t-tr">Bağlantılar yalnızca bilgilendirme amaçlıdır.</span><span class="t-en">Links are shared for information only.</span> <a href="#" id="discOpen"><span class="t-tr">Sorumluluk reddi</span><span class="t-en">Disclaimer</span></a></span></div>
+  <div class="copy"><span>© <span id="y">2026</span> alemSecurity</span></div>
 </div></footer>
 <script>
 (function(){
@@ -494,6 +528,11 @@ const I18N={
   "gw.s.yesil": "Ücretsiz",
   "gw.ph": "Ara:",
   "gw.up": "Yukarı çık",
+  "gw.edit": "Açıklamayı düzenle",
+  "gw.copyrow": "Satırı kopyala",
+  "gw.copied": "kopyalandı",
+  "gw.note": "Uyarı",
+  "gw.edhint": "Kopyala, sonra dosyada aynı adresli satırın yerine yapıştır.",
   "gw.legend": "Yıldızlı olanlar favorilerim; her kategoride en üstte.",
   "gw.teaser": "Malware, CTI, blog ve Telegram kanalları; konu konu ayrılmış, aranabilir bir kaynak arşivi. Favorilerimi yıldızla işaretledim.",
   "gw.open": "Arşivi aç",
@@ -574,6 +613,11 @@ const I18N={
   "gw.s.yesil": "Free",
   "gw.ph": "Search:",
   "gw.up": "Back to top",
+  "gw.edit": "Edit description",
+  "gw.copyrow": "Copy row",
+  "gw.copied": "copied",
+  "gw.note": "Warning",
+  "gw.edhint": "Copy it, then paste it over the row with the same address in the file.",
   "gw.legend": "Starred ones are my favorites; they sit at the top of each category.",
   "gw.teaser": "A searchable archive of malware, CTI, blog and Telegram links, sorted by topic. My favorites carry a star.",
   "gw.open": "Open the archive",
@@ -600,6 +644,22 @@ const I18N={
 };
 
 /* ══ GATEWAY KATEGORİLERİ (sıra = ekrandaki sıra) ══ */
+/* ══ METİNLER — uyarı penceresi ve genel açıklamalar buradan değişir (TR/EN) ══ */
+const NOTES={
+  intro:{
+    show:true,            /* false yaparsan giriş uyarısı hiç çıkmaz */
+    oncePerSession:true,  /* true: aynı oturumda bir kez çıkar */
+    kicker:{tr:"Uyarı",en:"Warning"},
+    title:{tr:"Bu sayfadaki bağlantılar tehlikeli olabilir",en:"Links on this page can be dangerous"},
+    body:{tr:"Kaynaklar öğrenme ve araştırma amacıyla derlenmiştir. Devam etmeden önce şunları bil:",en:"These resources are collected for learning and research. Before you continue:"},
+    items:{
+      tr:["**Kırmızı ⚠ ile işaretli bağlantılar** gerçek zararlı yazılım örnekleri barındırabilir.","Bunları yalnızca **izole bir sanal makinede** aç. İndirdiğin dosyaları ana sisteminde çalıştırma.","Listelenen sitelerle bir bağım yok. **Kullanımdan doğan sorumluluk sana aittir;** yasal ve etik sınırlar içinde kal."],
+      en:["**Links marked with a red ⚠** may host real malware samples.","Open them only in **an isolated virtual machine**. Never run downloaded files on your main system.","I have no affiliation with the listed sites. **You are responsible for how you use them;** stay within legal and ethical limits."]},
+    ok:{tr:"Anladım, devam et",en:"I understand, continue"}
+  },
+  generic:{tg:{tr:"Telegram kanalı",en:"Telegram channel"},link:{tr:"Güvenlik kaynağı",en:"Security resource"}}
+};
+
 /* ══ KATEGORİLER — yeni kategori = bir blok ekle (id, name, desc, istersen subs) ══ */
 const CATEGORIES=[
   {"id": "methodology", "name": {"tr": "Metodoloji", "en": "Methodology"}, "desc": {"tr": "Saldırı–savunma metodolojisi ve öğrenme platformları.", "en": "Attack–defense methodology and learning platforms."}},
@@ -912,7 +972,6 @@ const LINKS=[
   ["reddit.com/r/selfhosted/wiki", "", "Self-hosted wiki’si", "Self-hosted wiki", "index", ""],
   ["digdeeper.club", "", "", "", "index", ""],
   ["open-slum.org", "", "", "", "index", ""],
-  /* ── links.js ile eşitlenen eksik linkler ── */
   ["urlhaus.abuse.ch", "", "Zararlı URL listesi", "Malicious URL feed", "malware/ioc,cti,link", ""],
   ["feodotracker.abuse.ch", "", "Botnet C2 listesi", "Botnet C2 tracker", "malware/ioc,cti", ""],
   ["sslbl.abuse.ch", "", "Kötü SSL sertifikaları", "Bad SSL certificates", "malware/ioc,cti", ""],
@@ -1025,7 +1084,7 @@ LINKS.forEach(([u,label,dtr,den,cs,co])=>{
   const lb=label||(tg?url.replace(/\/$/,"").split("/").pop():url.replace(/^https?:\/\//,"").replace(/\/$/,""));
   const cats=(cs||"").split(",").filter(Boolean).map(x=>{const p=x.split("/");return{c:p[0],s:p[1]}});
   const cols=(co||"").split(",").filter(Boolean);
-  ITEMS.push({url,label:lb,tg,cats,cols,fav:cols.includes("sari"),d:{tr:dtr||"",en:den||dtr||""},
+  ITEMS.push({raw:[u,label,dtr,den,cs,co],url,label:lb,tg,cats,cols,fav:cols.includes("sari"),d:{tr:dtr||"",en:den||dtr||""},
     hay:norm([lb,url,dtr,den,cats.map(x=>CAT[x.c]?CAT[x.c].name.tr+" "+CAT[x.c].name.en:"").join(" ")].join(" "))});
 });
 let key=(()=>{let k=null;try{k=new URLSearchParams(location.search).get("k")}catch(e){}return CAT[k]?k:null})();
@@ -1037,12 +1096,36 @@ const inCat=(i,id)=>i.cats.some(x=>x.c===id);
 const favFirst=a=>a.filter(i=>i.fav).concat(a.filter(i=>!i.fav));
 const match=i=>(!col||i.cols.includes(col))&&(!onlyMiss||!hasD(i))&&words.every(w=>i.hay.includes(w));
 function row(i,showCats){
-  const id="t"+(++uid),real=pick(i.d),d=real||T(i.tg?"gw.tgd":"gw.gen"),st=PRI.find(c=>i.cols.includes(c));
+  const id="t"+(++uid),real=pick(i.d),d=real||pick(i.tg?NOTES.generic.tg:NOTES.generic.link),st=PRI.find(c=>i.cols.includes(c));
   const mk=PRI.filter(c=>i.cols.includes(c)).map(c=>'<i class="mk" style="--c:'+COL[c][1]+'" role="img" aria-label="'+esc(T("gw.l."+c))+'">'+COL[c][0]+'</i>').join("");
-  return '<div class="it'+(EDIT&&!real?" miss":"")+'"'+(st?' style="--c:'+COL[st][1]+'"':"")+'><a href="'+esc(i.url)+'" target="_blank" rel="noopener"><b>'+(i.tg?TGI:"")+esc(i.label)+mk+'</b>'+
+  const tip=EDIT
+    ?'<div class="tip ed" id="'+id+'" role="group" aria-label="'+esc(T("gw.edit"))+'"><label>TR<input class="ed-tr" value="'+esc(i.d.tr)+'"></label><label>EN<input class="ed-en" value="'+esc(i.d.en)+'"></label><button type="button" class="ed-cp">'+esc(T("gw.copyrow"))+'</button><small>'+esc(T("gw.edhint"))+'</small></div>'
+    :'<span class="tip" role="tooltip" id="'+id+'">'+esc(d)+'</span>';
+  return '<div class="it'+(EDIT&&!real?" miss":"")+'" data-ix="'+ITEMS.indexOf(i)+'"'+(st?' style="--c:'+COL[st][1]+'"':"")+'><a href="'+esc(i.url)+'" target="_blank" rel="noopener"'+'><b>'+(i.tg?TGI:"")+esc(i.label)+mk+'</b>'+
     (showCats?'<small>'+esc(i.cats.map(x=>CAT[x.c]?pick(CAT[x.c].name):x.c).join(" · "))+'</small>':"")+'</a>'+
-    (real||!EDIT?'<button type="button" class="ib" aria-label="'+esc(T("gw.info"))+'" aria-expanded="false" aria-describedby="'+id+'">!</button><span class="tip" role="tooltip" id="'+id+'">'+esc(d)+'</span>':(EDIT?'<button type="button" class="ib" aria-label="Açıklama eksik" aria-expanded="false" aria-describedby="'+id+'">!</button><span class="tip" role="tooltip" id="'+id+'">Açıklama eksik · dizideki satırın 3. (TR) ve 4. (EN) alanını doldur</span>':""))+'</div>';
+    '<button type="button" class="ib" aria-label="'+esc(T("gw.info"))+'" aria-expanded="false" aria-describedby="'+id+'">!</button>'+tip+'</div>';
 }
+/* ── giriş notu (cam efekti, alttan açılan sayfa), metinler NOTES.intro içinde ── */
+const GN=document.createElement("dialog");GN.className="gn";GN.setAttribute("aria-labelledby","gnt");GN.setAttribute("aria-describedby","gnb");document.body.appendChild(GN);
+const nbtn=document.createElement("button");nbtn.type="button";nbtn.className="nbtn";
+const mq=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+const md=t=>esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");
+function noteRender(){const N=NOTES.intro,fl=GN.contains(document.activeElement)&&document.activeElement.dataset.l;
+  GN.innerHTML='<div class="gn-in"><div class="gn-top"><span class="gn-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.6 1.6 20.6h20.8L12 2.6Zm-1 7h2v5.6h-2V9.6Zm0 7.2h2v2h-2v-2Z"/></svg></span><span class="gn-lab">'+esc(pick(N.kicker))+'</span><div class="gn-lang" role="group" aria-label="Dil / Language"><button type="button" data-l="tr" aria-pressed="'+(L==="tr")+'">TR</button><button type="button" data-l="en" aria-pressed="'+(L==="en")+'">EN</button></div></div><h2 class="gn-t" id="gnt">'+esc(pick(N.title))+'</h2><p class="gn-b" id="gnb">'+esc(pick(N.body))+'</p><ul class="gn-l">'+pick(N.items).map(x=>"<li>"+md(x)+"</li>").join("")+'</ul><button type="button" class="gn-ok">'+esc(pick(N.ok))+'</button></div>';
+  GN.querySelectorAll(".gn-lang button").forEach(b=>{b.onclick=()=>{if(b.dataset.l!==L)$("#lang").onclick()}});
+  if(fl){const f=GN.querySelector('.gn-lang [data-l="'+L+'"]');if(f)f.focus()}
+}
+function noteOpen(){if(!GN.showModal||GN.open)return;noteRender();GN.classList.remove("out");GN.showModal();const b=GN.querySelector(".gn-ok");if(b)b.focus()}
+function noteClose(){if(!GN.open)return;try{sessionStorage.setItem("gw.note","1")}catch(e){}
+  if(mq()){GN.close();return}
+  GN.classList.add("out");setTimeout(()=>{GN.close();GN.classList.remove("out")},230)}
+GN.addEventListener("click",e=>{if(e.target.closest(".gn-ok"))noteClose()});
+GN.addEventListener("cancel",e=>{e.preventDefault();noteClose()});
+nbtn.onclick=noteOpen;
+$(".pbar").appendChild(nbtn);
+setTimeout(()=>{const N=NOTES.intro;let seen=false;try{seen=sessionStorage.getItem("gw.note")==="1"}catch(e){}
+  if(N.show&&!EDIT&&!(N.oncePerSession&&seen))noteOpen()},mq()?0:450);
+function pulse(){res.classList.remove("anim");void res.offsetWidth;$$("#res .cc,#res .it").forEach((el,i)=>el.style.setProperty("--n",Math.min(i,14)));res.classList.add("anim");setTimeout(()=>res.classList.remove("anim"),1200)}
 const grid=a=>'<div class="rg">'+a.map(i=>row(i,0)).join("")+'</div>';
 const addTile=(k,s)=>EDIT?'<button type="button" class="add" data-k="'+k+'" data-s="'+s+'">+ link ekle</button>':"";
 function renderEB(){
@@ -1078,7 +1161,7 @@ function openCat(k,push){
   key=k&&CAT[k]?k:null;
   if(push){try{{const u=new URLSearchParams(location.search);key?u.set("k",key):u.delete("k");const q=u.toString();history.pushState({k:key},"",q?"?"+q:location.pathname)}}catch(e){}}
   tabs.forEach(b=>b.setAttribute("aria-pressed",b._c.id===(key||"all")));
-  render();
+  render();pulse();
   if(push){try{$(".pbar").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}catch(e){}}
 }
 [{id:"all",name:{tr:"Kategoriler",en:"Categories"}}].concat(CATEGORIES).forEach(c=>{
@@ -1109,6 +1192,8 @@ eb.addEventListener("click",e=>{
 });
 res.addEventListener("click",e=>{
   const ad=e.target.closest(".add");if(ad){copyTxt('["","","","","'+ad.dataset.k+(ad.dataset.s?"/"+ad.dataset.s:"")+'",""],');flash(ad,"✓ kopyalandı — LINKS içine yapıştır");return}
+  const cp=e.target.closest(".ed-cp");
+  if(cp){const x=ITEMS[+cp.closest(".it").dataset.ix],t=cp.parentNode;copyTxt(JSON.stringify([x.raw[0],x.raw[1],t.querySelector(".ed-tr").value.trim(),t.querySelector(".ed-en").value.trim(),x.raw[4],x.raw[5]])+",");flash(cp,"✓ "+T("gw.copied"));return}
   if(e.target.closest(".bk")){openCat(null,true);return}
   const cc=e.target.closest("a.cc");if(cc){e.preventDefault();openCat(cc.dataset.k,true);return}
   const b=e.target.closest(".ib");closeTips(b);
@@ -1134,13 +1219,13 @@ function navSoon(){$$("nav a[data-nav]").forEach(a=>{
 /* ── arama örnekleri (dönen placeholder) + yukarı çık ── */
 const PH={tr:["nmap, shodan, sandbox…","Tor, VPN, şifreli mesajlaşma…","tria.ge, ghidra, yara…","OSINT, kullanıcı adı arama…","CTI, tehdit istihbaratı…","Linux, Arch, pentest…"],en:["nmap, shodan, sandbox…","Tor, VPN, encrypted messaging…","tria.ge, ghidra, yara…","OSINT, username search…","CTI, threat intelligence…","Linux, Arch, pentest…"]};
 let pi=0,pt=null;
-const up=document.createElement("button");up.type="button";up.className="up";up.hidden=true;up.textContent="↑";document.body.appendChild(up);
-function phSet(){const a=PH[L]||PH.tr;inp.placeholder=T("gw.ph")+" "+a[pi%a.length];up.setAttribute("aria-label",T("gw.up"))}
+const up=document.createElement("button");up.type="button";up.className="up";up.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>';document.body.appendChild(up);
+function phSet(){const a=PH[L]||PH.tr;inp.placeholder=T("gw.ph")+" "+a[pi%a.length];up.setAttribute("aria-label",T("gw.up"));nbtn.textContent=T("gw.note");nbtn.setAttribute("aria-label",T("gw.note"));if(GN.open)noteRender()}
 function phLoop(){clearInterval(pt);if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   pt=setInterval(()=>{if(document.activeElement===inp||inp.value)return;inp.classList.add("po");setTimeout(()=>{pi++;phSet();inp.classList.remove("po")},300)},2800)}
-addEventListener("scroll",()=>{up.hidden=(window.scrollY||0)<600},{passive:true});
+addEventListener("scroll",()=>{up.classList.toggle("on",(window.scrollY||0)>500)},{passive:true});
 up.onclick=()=>{try{$(".pbar").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}catch(e){scrollTo(0,0)}};
-phLoop();
+phLoop();setTimeout(pulse,0);
 
 /* dil */
 const clk=$("#clk"),tick=()=>{clk.textContent=new Date().toLocaleTimeString(L==="en"?"en-GB":"tr-TR")};
@@ -1170,45 +1255,6 @@ gate.onclick=()=>{
 $("#cl").onclick=closeOv;
 ov.addEventListener("click",e=>{if(e.target===ov)closeOv()});
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!ov.hidden)closeOv()});
-})();
-</script>
-<div class="dsc" id="disc" role="dialog" aria-modal="true" aria-labelledby="discT">
-  <div class="box" tabindex="-1">
-    <span class="grab" aria-hidden="true"></span>
-    <div class="dh">
-      <span class="dic" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span>
-      <div><div class="dk"><span class="t-tr">Sorumluluk reddi</span><span class="t-en">Disclaimer</span></div><div class="dt" id="discT" role="heading" aria-level="2"><span class="t-tr">Kısa bir uyarı</span><span class="t-en">A quick notice</span></div></div>
-      <button type="button" class="lg" id="discL" aria-label="Change language">EN</button>
-    </div>
-    <ul class="dl">
-      <li><span class="t-tr"><b>Bağlantım yok.</b> Burada paylaşılan sitelerin ve araçların hiçbiriyle ilgim yok; hepsi yalnızca bilgilendirme amaçlıdır.</span><span class="t-en"><b>No affiliation.</b> I have no ties to any site or tool listed here; everything is shared for information only.</span></li>
-      <li><span class="t-tr"><b>Dikkatli ol.</b> CTI, malware analizi ve tersine mühendislikle ilgilendiğim için bazı kaynaklar canlı zararlı örnekleri ya da exploit kodu içerebilir; izole bir sanal makinede çalış.</span><span class="t-en"><b>Be careful.</b> As I work on CTI, malware analysis and reverse engineering, some resources may contain live malware samples or exploit code; use an isolated virtual machine.</span></li>
-      <li><span class="t-tr"><b>Sorumluluk sende.</b> Bu bağlantılardan doğabilecek hiçbir zarardan sorumlu değilim; kaynakları yasal ve etik sınırlar içinde kullan.</span><span class="t-en"><b>Your responsibility.</b> I'm not liable for any harm arising from these links; use them within legal and ethical limits.</span></li>
-    </ul>
-    <button type="button" class="dok" id="discOk"><span class="t-tr">Kabul ediyorum</span><span class="t-en">I accept</span></button>
-  </div>
-</div>
-<script>
-(function(){
-  var KEY="alem_disc_v1",d=document.getElementById("disc");if(!d)return;
-  var ok=document.getElementById("discOk"),lb=document.getElementById("discL"),op=document.getElementById("discOpen"),root=document.documentElement;
-  var bg=[].slice.call(document.querySelectorAll("header,main,footer,canvas,.spot"));
-  function lang(){return root.lang==="en"?"TR":"EN"}
-  function lock(on){bg.forEach(function(e){on?e.setAttribute("inert",""):e.removeAttribute("inert")});document.body.style.overflow=on?"hidden":""}
-  function show(){root.classList.remove("dseen");lock(true);d.querySelector(".box").focus({preventScroll:true})}
-  function hide(){root.classList.add("dseen");lock(false);try{sessionStorage.setItem(KEY,"1")}catch(e){}if(op)op.focus()}
-  ok.addEventListener("click",hide);
-  lb.addEventListener("click",function(){var b=document.getElementById("lang");if(b)b.click();lb.textContent=lang()});
-  if(op)op.addEventListener("click",function(e){e.preventDefault();show()});
-  d.addEventListener("keydown",function(e){
-    if(e.key!=="Tab")return;
-    var f=[].slice.call(d.querySelectorAll("button,a[href]")).filter(function(x){return x.offsetParent!==null});
-    if(!f.length)return;var a=f[0],z=f[f.length-1];
-    if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}
-    else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}
-  });
-  lb.textContent=lang();
-  if(!root.classList.contains("dseen"))show();
 })();
 </script>
 </body>
